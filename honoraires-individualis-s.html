@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Honoraires du Cabinet. Transparence sur les tarifs, le premier rendez-vous et l'assurance de protection juridique.">
+<title>Honoraires | Cabinet Avocat - Tarifs et Conventions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=DM+Sans:opsz,wght@9..40,300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* Custom Font Application */
+body { font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; }
+/* Mobile Menu Logic */
+#mobile-menu-toggle:checked ~ #mobile-menu { display: block; }
+/* Custom Selection Color */
+::selection { background-color: #AED18E; color: #2C6E68; }
+/* Animations */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+/* Image styling */
+.image-container { position: relative; overflow: hidden; border-radius: 2px; }
+.image-container img { transition: transform 0.7s ease; }
+.image-container:hover img { transform: scale(1.03); }
+</style></head>
+<body class="bg-stone-50 text-slate-800 antialiased selection:bg-[#AED18E] selection:text-[#2C6E68]">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-100">
+        <div class="max-w-screen-xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 bg-[#2C6E68] text-[#AED18E] flex items-center justify-center font-serif text-xl rounded-sm">M</div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-tight text-[#2C6E68] leading-none">MAÎTRE MOREL</span>
+                    <span class="text-[0.65rem] tracking-widest text-stone-500 uppercase mt-0.5">Avocat à la Cour</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+                <a href="#" class="hover:text-[#2C6E68] transition-colors">Accueil</a>
+                <a href="#" class="hover:text-[#2C6E68] transition-colors">Le Cabinet</a>
+                <a href="#" class="text-[#2C6E68] transition-colors">Honoraires</a>
+                <a href="#contact" class="px-5 py-2.5 bg-[#2C6E68] text-white rounded-sm hover:bg-[#235853] transition-colors duration-300">Prendre contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <label for="mobile-menu-toggle" class="md:hidden cursor-pointer text-[#2C6E68]">
+                <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+            </label>
+        </div>
+        <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-stone-100 p-6 shadow-lg">
+            <div class="flex flex-col gap-4 text-center">
+                <a href="#" class="text-stone-700 py-2">Accueil</a>
+                <a href="#" class="text-stone-700 py-2">Le Cabinet</a>
+                <a href="#" class="text-[#2C6E68] font-medium py-2">Honoraires</a>
+                <a href="#contact" class="text-[#2C6E68] font-medium py-2">Prendre contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Title -->
+    <header class="pt-32 pb-16 px-6 bg-white border-b border-stone-100">
+        <div class="max-w-screen-xl mx-auto text-center fade-in-up">
+            <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-6 bg-[#AED18E]/10">Transparence &amp; Confiance</span>
+            <h1 class="text-4xl md:text-6xl font-serif text-[#2C6E68] tracking-tight mb-6">
+                Honoraires
+            </h1>
+            <p class="text-lg text-stone-500 max-w-2xl mx-auto font-light">
+                Une approche claire et prévisible du coût de nos interventions, adaptée à vos besoins spécifiques.
+            </p>
+        </div>
+    </header>
+
+    <!-- Block 1: Fixation des honoraires (Text Left / Image Right) -->
+    <section class="py-20 md:py-28 bg-stone-50">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-6">
+                        Fixation des honoraires individualisée
+                    </h2>
+                    <div class="space-y-6 text-stone-600 leading-relaxed font-light text-lg">
+                        <p>
+                            Ainsi, les honoraires sont déterminés de manière individualisée, en fonction du dossier et du Client. La question des honoraires est évoquée à l’occasion du premier rendez-vous avec l’Avocat.
+                        </p>
+                        <p class="text-base text-stone-500">
+                            Une convention d'honoraires écrite est systématiquement proposée, détaillant précisément les modalités de facturation (au temps passé, au forfait, ou avec un honoraire de résultat) afin de garantir une parfaite transparence.
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 image-container h-[400px] shadow-sm fade-in-up">
+                    <!-- Photo 1: Office/Discussion setting -->
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&amp;w=2664&amp;auto=format&amp;fit=crop" alt="Bureau Avocat" class="w-full h-full object-cover grayscale-[20%]">
+                    <div class="absolute inset-0 bg-[#2C6E68]/10 mix-blend-multiply pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 2: Premier Rendez-vous (Centered, Highlighted) -->
+    <section class="py-20 bg-white border-y border-stone-100">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#AED18E]/20 text-[#2C6E68] mb-6">
+                <iconify-icon icon="lucide:calendar-check-2" width="24"></iconify-icon>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-8">
+                Premier rendez-vous
+            </h2>
+            <p class="text-xl text-stone-600 mb-10 font-light max-w-2xl mx-auto">
+                Les premiers rendez-vous avec Maître HAMOUMOU sont facturés :
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <!-- Particuliers Card -->
+                <div class="p-8 border border-stone-200 rounded-sm bg-stone-50 hover:border-[#AED18E] transition-colors duration-300">
+                    <span class="text-xs font-bold tracking-widest text-stone-400 uppercase">Particuliers</span>
+                    <div class="text-4xl font-serif text-[#2C6E68] mt-4 mb-2">84 € <span class="text-lg text-stone-500 font-sans">T.T.C.</span></div>
+                    <p class="text-sm text-stone-500">Consultation initiale</p>
+                </div>
+                <!-- Sociétés Card -->
+                <div class="p-8 border border-stone-200 rounded-sm bg-stone-50 hover:border-[#AED18E] transition-colors duration-300">
+                    <span class="text-xs font-bold tracking-widest text-stone-400 uppercase">Sociétés</span>
+                    <div class="text-4xl font-serif text-[#2C6E68] mt-4 mb-2">90 € <span class="text-lg text-stone-500 font-sans">H.T.</span></div>
+                    <p class="text-sm text-stone-500">Consultation juridique</p>
+                </div>
+            </div>
+
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#2C6E68] text-white rounded-sm hover:bg-[#235853] transition-colors duration-300 shadow-sm text-sm tracking-wide">
+                <span>Prendre contact</span>
+                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+            </a>
+        </div>
+    </section>
+
+    <!-- Block 3: Assurance Protection Juridique (Image Left / Text Right) -->
+    <section class="py-20 md:py-28 bg-stone-50">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="image-container h-[400px] shadow-sm fade-in-up">
+                    <!-- Photo 2: Documents/Signing/Insurance concept -->
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" alt="Dossiers Juridiques" class="w-full h-full object-cover grayscale-[20%]">
+                    <div class="absolute inset-0 bg-[#2C6E68]/10 mix-blend-multiply pointer-events-none"></div>
+                </div>
+                <div class="fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-6">
+                        Assurance de protection juridique
+                    </h2>
+                    <div class="space-y-4 text-stone-600 leading-relaxed font-light text-base md:text-lg">
+                        <p>
+                            Les honoraires de l’avocat peuvent, dans certains cas, être pris en charge par une assurance de protection juridique souscrite par le client.
+                        </p>
+                        <p>
+                            Cette garantie est parfois intégrée à d’autres contrats, tels qu’une assurance habitation ou certains services bancaires. Lorsque cette couverture existe, le client règle directement les honoraires, puis reçoit un justificatif permettant d’obtenir le remboursement auprès de son assureur.
+                        </p>
+                        <p>
+                            Les modalités de prise en charge peuvent varier selon les barèmes fixés par la compagnie d’assurance, lesquels sont pris en considération lors de la facturation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#AED18E]/20 border-t border-[#2C6E68]/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white p-8 md:p-12 shadow-sm border-t-4 border-[#2C6E68]">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-serif text-[#2C6E68] mb-2 tracking-tight">Prendre rendez-vous</h2>
+                    <p class="text-stone-500 text-sm">Contactez le cabinet pour fixer votre première consultation.</p>
+                </div>
+
+                <form onsubmit="event.preventDefault();" class="space-y-5">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="space-y-1">
+                            <label class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Nom complet</label>
+                            <input type="text" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Email</label>
+                            <input type="email" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Type de consultation</label>
+                        <select class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors text-stone-600">
+                            <option>Particulier (84€ TTC)</option>
+                            <option>Société (90€ HT)</option>
+                            <option>Autre demande</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-stone-500 uppercase tracking-wider">Message</label>
+                        <textarea rows="4" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors resize-none"></textarea>
+                    </div>
+                    
+                    <button class="w-full bg-[#2C6E68] text-white font-medium py-4 rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide mt-2">
+                        Envoyer la demande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a4541] text-stone-400 py-12 border-t border-[#2C6E68]">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-12 text-sm">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="font-serif text-2xl text-white block mb-4">MAÎTRE MOREL</span>
+                    <p class="max-w-xs leading-relaxed text-stone-400 font-light">
+                        Avocat au Barreau de Lyon.<br>
+                        Une expertise dédiée à la défense de vos droits.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-serif text-lg mb-4">Plan du site</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Accueil</a></li>
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Le Cabinet</a></li>
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Honoraires</a></li>
+                        <li><a href="#contact" class="hover:text-[#AED18E] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-serif text-lg mb-4">Légal</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Mentions légales</a></li>
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider">
+                <p>© 2023 Cabinet Morel. Tous droits réservés.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="16"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>

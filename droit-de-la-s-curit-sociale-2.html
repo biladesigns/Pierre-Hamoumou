@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cabinet d'avocats à Lyon expert en Droit de la sécurité sociale et contentieux URSSAF. Accompagnement des entreprises et particuliers.">
+<title>Droit de la Sécurité Sociale &amp; URSSAF Lyon | Maître Morel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=DM+Sans:opsz,wght@9..40,300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* Custom Font Application */
+body { font-family: 'DM Sans', sans-serif; }
+h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; }
+/* Mobile Menu Logic via Checkbox */
+#mobile-menu-toggle:checked ~ #mobile-menu { display: block; }
+/* Custom Selection Color */
+::selection { background-color: #AED18E; color: #2C6E68; }
+/* Subtle Fade In */
+.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+/* Accordion Style */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+</style></head>
+  <body class="bg-stone-50 text-slate-800 antialiased selection:bg-[#AED18E] selection:text-[#2C6E68]">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-100">
+      <div class="max-w-screen-xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 bg-[#2C6E68] text-[#AED18E] flex items-center justify-center font-serif text-xl rounded-sm">
+            M
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-tight text-[#2C6E68] leading-none">
+              MAÎTRE MOREL
+            </span>
+            <span class="text-[0.65rem] tracking-widest text-stone-500 uppercase mt-0.5">
+              Avocat à la Cour
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+          <a href="#securite-sociale" class="hover:text-[#2C6E68] transition-colors">
+            Expertises
+          </a>
+          <a href="#cabinet" class="hover:text-[#2C6E68] transition-colors">
+            Engagements
+          </a>
+          <a href="#faq" class="hover:text-[#2C6E68] transition-colors">FAQ</a>
+          <a href="#honoraires" class="hover:text-[#2C6E68] transition-colors">
+            Honoraires
+          </a>
+          <a href="#contact" class="px-5 py-2.5 bg-[#2C6E68] text-white rounded-sm hover:bg-[#235853] transition-colors duration-300">
+            Contact
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <label for="mobile-menu-toggle" class="md:hidden cursor-pointer text-[#2C6E68]">
+          <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+        </label>
+      </div>
+      <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+      <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-stone-100 p-6 shadow-lg">
+        <div class="flex flex-col gap-4 text-center">
+          <a href="#securite-sociale" class="text-stone-700 py-2">Expertises</a>
+          <a href="#cabinet" class="text-stone-700 py-2">Engagements</a>
+          <a href="#faq" class="text-stone-700 py-2">FAQ</a>
+          <a href="#contact" class="text-[#2C6E68] font-medium py-2">
+            Prendre rendez-vous
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 bg-white overflow-hidden">
+      <!-- Abstract background elements -->
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-[#AED18E]/10 -skew-x-12 translate-x-1/4 pointer-events-none"></div>
+
+      <div class="max-w-screen-xl mx-auto relative z-10 grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-8 fade-in-up">
+          <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-6 bg-[#AED18E]/10">
+            Droit Social &amp; Contentieux URSSAF
+          </span>
+          <h1 class="text-5xl md:text-7xl font-serif text-[#2C6E68] tracking-tight leading-[1.1] mb-6">
+            Avocat en Droit de la
+            <br>
+            Sécurité Sociale
+            <br>
+            <span class="text-stone-400 italic font-light">Barreau de</span>
+            Lyon.
+          </h1>
+          <p class="text-lg md:text-xl text-stone-600 max-w-2xl leading-relaxed mb-10 font-light">
+            Accompagnement des entreprises, dirigeants et particuliers face à
+            l'URSSAF et aux organismes sociaux. Prévention des risques, audit et
+            défense contentieuse.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#2C6E68] text-white rounded-sm hover:bg-[#235853] transition-colors duration-300 shadow-sm text-sm tracking-wide">
+              <span>Prendre rendez-vous</span>
+              <iconify-icon icon="lucide:arrow-right" width="16" stroke-width="1.5"></iconify-icon>
+            </a>
+            <a href="#securite-sociale" class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-stone-200 text-stone-600 rounded-sm hover:border-[#2C6E68] hover:text-[#2C6E68] transition-colors duration-300 bg-white text-sm tracking-wide">
+              Nos expertises
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Section 1: Domaines d'intervention (Split Target) -->
+
+    <section id="securite-sociale" class="py-24 border-t border-stone-100 bg-stone-50">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center mb-16">
+          <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-4 bg-[#AED18E]/10">
+            Expertise Droit Social
+          </span>
+          <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-6">
+            Compétences en Droit de la Sécurité Sociale et Contentieux URSSAF
+          </h2>
+          <p class="text-stone-600 leading-relaxed font-light text-lg">
+            Intervenant exclusivement en droit de la sécurité sociale et plus
+            particulièrement en contentieux URSSAF, le Cabinet accompagne
+            entreprises, dirigeants, travailleurs indépendants et secteurs
+            réglementés dans l’ensemble des problématiques liées aux cotisations
+            sociales. L’objectif : prévenir les risques, sécuriser vos pratiques
+            et défendre vos intérêts à chaque étape.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:eye" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Avis de contrôle URSSAF
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Accompagnement dès la réception de l’avis. Analyse de la
+              légitimité, sécurisation des pratiques et préparation de
+              l'entreprise à la visite de l’inspecteur pour limiter les risques.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:file-warning" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Lettre d’observations
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Analyse détaillée des griefs, identification des irrégularités et
+              rédaction d'une réponse motivée pour solliciter l’abandon partiel
+              ou total des observations.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:alert-triangle" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Mise en demeure
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Vérification de la validité (contenu, motivation) et recours
+              devant la Commission de Recours Amiable (CRA) pour obtenir
+              l'annulation ou la réduction du redressement.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:gavel" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Contrainte &amp; Opposition
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Procédure d’opposition devant le Pôle Social du TJ sous 15 jours.
+              Le Cabinet soulève les irrégularités de forme ou de fond et plaide
+              l’annulation du titre.
+            </p>
+          </div>
+          <!-- Card 5 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:sprout" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Création d’entreprise
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Optimisation des charges sociales, choix du statut du dirigeant et
+              régimes applicables. Sécurisation du lancement de l’activité et
+              maîtrise des coûts.
+            </p>
+          </div>
+          <!-- Card 6 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:hard-hat" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Approche Sectorielle
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Transport, Sécurité privée, BTP, Propreté. Défense adaptée aux
+              spécificités : temps de conduite, vacations, sous-traitance,
+              travail dissimulé, conventions.
+            </p>
+          </div>
+          <!-- Card 7 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:users" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Travailleurs Indépendants
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Analyse des appels de cotisations, contestation des montants
+              indus, négociation d'échéanciers et défense devant la CRA ou le
+              Tribunal Judiciaire.
+            </p>
+          </div>
+          <!-- Card 8 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:shield-alert" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Liquidation Judiciaire
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Réaction immédiate face à l'assignation URSSAF. Contestation,
+              négociation et défense du dirigeant devant le Tribunal de Commerce
+              pour préserver l'activité.
+            </p>
+          </div>
+          <!-- Card 9 -->
+          <div class="bg-stone-50 p-8 rounded-sm hover:bg-[#2C6E68]/5 transition-colors duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#2C6E68] shadow-sm mb-6 group-hover:scale-110 transition-transform">
+              <iconify-icon icon="lucide:shield-check" width="24"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-3">
+              Accompagnement Général
+            </h3>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Suivi complet : audit interne, prévention des risques de
+              redressement, mise en place de bonnes pratiques et défense devant
+              toutes les juridictions sociales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Why This Cabinet -->
+    <section id="cabinet" class="py-24 bg-white relative">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="grid md:grid-cols-12 gap-12">
+          <div class="md:col-span-4">
+            <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-6">
+              Engagement &amp; Rigueur
+            </h2>
+            <p class="text-stone-500 leading-relaxed font-light mb-6">
+              Une prise en charge rapide de vos dossiers et une information
+              constante sur l'évolution des procédures et contrôles en cours.
+            </p>
+            <div class="w-16 h-1 bg-[#AED18E]"></div>
+          </div>
+          <div class="md:col-span-8 grid sm:grid-cols-2 gap-8">
+            <!-- Value 1 -->
+            <div class="flex flex-col gap-3">
+              <iconify-icon icon="lucide:shield" class="text-[#2C6E68]" width="24" stroke-width="1.5"></iconify-icon>
+              <h3 class="text-lg font-serif text-stone-800 font-medium">
+                Réactivité &amp; Suivi
+              </h3>
+              <p class="text-sm text-stone-500 leading-relaxed">
+                Traitement immédiat des messages RPVA et transmission des actes
+                dans la demi-journée.
+              </p>
+            </div>
+            <!-- Value 2 -->
+            <div class="flex flex-col gap-3">
+              <iconify-icon icon="lucide:message-square" class="text-[#2C6E68]" width="24" stroke-width="1.5"></iconify-icon>
+              <h3 class="text-lg font-serif text-stone-800 font-medium">
+                Pédagogie
+              </h3>
+              <p class="text-sm text-stone-500 leading-relaxed">
+                Le droit social touche à l'intime et au quotidien. J'explique
+                chaque étape sans jargon inutile pour une prise de décision
+                éclairée.
+              </p>
+            </div>
+            <!-- Value 3 -->
+            <div class="flex flex-col gap-3">
+              <iconify-icon icon="lucide:clock" class="text-[#2C6E68]" width="24" stroke-width="1.5"></iconify-icon>
+              <h3 class="text-lg font-serif text-stone-800 font-medium">
+                Disponibilité
+              </h3>
+              <p class="text-sm text-stone-500 leading-relaxed">
+                Réactivité par mail et téléphone. Un interlocuteur unique qui
+                connaît parfaitement votre dossier.
+              </p>
+            </div>
+            <!-- Value 4 -->
+            <div class="flex flex-col gap-3">
+              <iconify-icon icon="lucide:file-check" class="text-[#2C6E68]" width="24" stroke-width="1.5"></iconify-icon>
+              <h3 class="text-lg font-serif text-stone-800 font-medium">
+                Transparence
+              </h3>
+              <p class="text-sm text-stone-500 leading-relaxed">
+                Les honoraires sont abordés dès le premier rendez-vous via une
+                convention claire. Aucune surprise ne vient troubler la relation
+                de confiance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Geographic Anchor -->
+    <section class="py-20 bg-[#2C6E68] text-white">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif text-white tracking-tight mb-4">
+            Intervention à Lyon et région
+          </h2>
+          <p class="text-[#AED18E] text-lg mb-6 font-serif italic">
+            Ancrage local et maîtrise des juridictions.
+          </p>
+          <p class="text-stone-200 font-light leading-relaxed mb-8 max-w-md">
+            Le cabinet est situé au cœur de Lyon, à proximité immédiate du
+            Palais de Justice. J'interviens principalement devant les
+            juridictions du ressort de la Cour d'appel de Lyon.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-stone-300">
+            <span class="flex items-center gap-2">
+              <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+              Lyon 3ème
+            </span>
+            <span class="w-1 h-1 bg-[#AED18E] rounded-full"></span>
+            <span>Accès Métro B</span>
+          </div>
+        </div>
+        <div class="relative h-64 md:h-full min-h-[300px] border border-white/10 bg-white/5 rounded-sm flex items-center justify-center p-8">
+          <!-- Decorative Abstract Map Representation -->
+          <div class="text-center">
+            <iconify-icon icon="lucide:landmark" class="text-[#AED18E] opacity-80 mb-4" width="64" stroke-width="1"></iconify-icon>
+            <p class="uppercase tracking-widest text-xs font-semibold">
+              Cour d'appel de Lyon
+            </p>
+            <p class="text-stone-400 text-xs mt-2">
+              Zone de compétence principale
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-stone-50">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-center text-3xl font-serif text-[#2C6E68] mb-12 tracking-tight">
+          Questions Fréquentes
+        </h2>
+
+        <div class="space-y-4">
+          <!-- Q1 -->
+          <details class="group bg-white border border-stone-200 rounded-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+              <span class="font-medium text-stone-700 text-sm md:text-base">
+                Comment sont fixés les honoraires ?
+              </span>
+              <span class="text-[#2C6E68] transition-transform duration-300 group-open:rotate-180">
+                <iconify-icon icon="lucide:chevron-down" width="20"></iconify-icon>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-0 text-stone-500 text-sm leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+              Les honoraires sont fixés en toute transparence dès le premier
+              rendez-vous via une convention d'honoraires. Ils peuvent être
+              établis au forfait pour une procédure ou au temps passé pour le
+              conseil.
+            </div>
+          </details>
+
+          <!-- Q2 -->
+          <details class="group bg-white border border-stone-200 rounded-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+              <span class="font-medium text-stone-700 text-sm md:text-base">
+                Quelles sont vos juridictions d'intervention ?
+              </span>
+              <span class="text-[#2C6E68] transition-transform duration-300 group-open:rotate-180">
+                <iconify-icon icon="lucide:chevron-down" width="20"></iconify-icon>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-0 text-stone-500 text-sm leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+              Nous intervenons principalement devant la Cour d'appel de Lyon et
+              le Tribunal Judiciaire de Lyon. Des déplacements à
+              Villefranche-sur-Saône, Saint-Etienne ou Bourg-en-Bresse sont
+              possibles sur devis.
+            </div>
+          </details>
+
+          <!-- Q3 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Honoraires -->
+    <section id="honoraires" class="py-20 bg-white border-t border-stone-100">
+      <div class="max-w-screen-xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center justify-center p-3 rounded-full bg-[#AED18E]/20 text-[#2C6E68] mb-6">
+          <iconify-icon icon="lucide:file-text" width="24" stroke-width="1.5"></iconify-icon>
+        </div>
+        <h2 class="text-3xl font-serif text-[#2C6E68] mb-6 tracking-tight">
+          Honoraires &amp; Transparence
+        </h2>
+        <p class="text-stone-500 font-light max-w-2xl mx-auto mb-8 text-sm md:text-base leading-relaxed">
+          Conformément à nos règles déontologiques, les honoraires sont fixés
+          librement en fonction de la complexité du dossier et du temps
+          consacré. Une convention d'honoraires est systématiquement proposée
+          avant toute diligence, détaillant le mode de facturation (forfait ou
+          temps passé).
+        </p>
+        <div class="text-xs text-stone-400 uppercase tracking-widest">
+          Premier contact sans engagement financier
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-[#AED18E]/20">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-white p-8 md:p-12 shadow-sm border-t-4 border-[#2C6E68]">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-serif text-[#2C6E68] mb-2 tracking-tight">
+              Contactez le Cabinet
+            </h2>
+            <p class="text-stone-500 text-sm">
+              Réponse sous 24 à 48 heures ouvrées.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12">
+            <!-- Coordonnées -->
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#2C6E68]/10 flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                  <iconify-icon icon="lucide:map-pin" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <h4 class="font-serif text-[#2C6E68] text-lg">Adresse</h4>
+                  <p class="text-stone-600 text-sm leading-relaxed">
+                    12 Rue de la République
+                    <br>
+                    69002 Lyon
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#2C6E68]/10 flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                  <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <h4 class="font-serif text-[#2C6E68] text-lg">Téléphone</h4>
+                  <p class="text-stone-600 text-sm">04 72 00 00 00</p>
+                  <p class="text-stone-400 text-xs mt-1">
+                    Du Lundi au Vendredi, 9h-18h
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#2C6E68]/10 flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                  <iconify-icon icon="lucide:mail" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <h4 class="font-serif text-[#2C6E68] text-lg">Courriel</h4>
+                  <p class="text-stone-600 text-sm">contact@cabinet-morel.fr</p>
+                  <p class="text-stone-400 text-xs mt-1">
+                    Pour tout envoi de pièces
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulaire (Visuel) -->
+            <form onsubmit="event.preventDefault();" class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">
+                  Vous êtes
+                </label>
+                <div class="grid grid-cols-2 gap-4">
+                  <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
+                    <input type="radio" name="profile" class="accent-[#2C6E68]">
+                    <span class="text-sm text-stone-600">Particulier</span>
+                  </label>
+                  <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
+                    <input type="radio" name="profile" class="accent-[#2C6E68]" checked="">
+                    <span class="text-sm text-stone-600">Entreprise</span>
+                  </label>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <input type="text" placeholder="Nom" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                <input type="email" placeholder="Email" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+              </div>
+              <input type="text" placeholder="Sujet" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+              <textarea rows="4" placeholder="Votre message..." class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors resize-none"></textarea>
+
+              <button class="w-full bg-[#2C6E68] text-white font-medium py-3 rounded-sm hover:bg-[#235853] transition-colors duration-300">
+                Envoyer le message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a4541] text-stone-400 py-12 border-t border-[#2C6E68]">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-12 text-sm">
+          <div class="col-span-1 md:col-span-2">
+            <span class="font-serif text-2xl text-white block mb-4">
+              MAÎTRE MOREL
+            </span>
+            <p class="max-w-xs leading-relaxed text-stone-400 font-light">
+              Avocat au Barreau de Lyon.
+              <br>
+              Une expertise dédiée au droit de la sécurité sociale et à la
+              protection de l'entreprise.
+            </p>
+          </div>
+          <div>
+            <h5 class="text-white font-serif text-lg mb-4">Navigation</h5>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-[#AED18E] transition-colors">
+                  Accueil
+                </a>
+              </li>
+              <li>
+                <a href="#securite-sociale" class="hover:text-[#AED18E] transition-colors">
+                  Expertises
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-[#AED18E] transition-colors">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-white font-serif text-lg mb-4">Informations</h5>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-[#AED18E] transition-colors">
+                  Mentions légales
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#AED18E] transition-colors">
+                  Politique de confidentialité
+                </a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#AED18E] transition-colors">
+                  Plan du site
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider">
+          <p>© 2023 Cabinet Morel. Tous droits réservés.</p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-white transition-colors">
+              <iconify-icon icon="lucide:linkedin" width="16"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+</body></html>
