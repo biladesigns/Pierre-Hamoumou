@@ -42,20 +42,23 @@ filter: grayscale(0%) contrast(1);
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-100">
         <div class="max-w-screen-xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="w-8 h-8 bg-[#2C6E68] text-[#AED18E] flex items-center justify-center font-serif text-xl rounded-sm">M</div>
-                <div class="flex flex-col">
-                    <span class="font-serif text-xl tracking-tight text-[#2C6E68] leading-none">MAÎTRE HAMOUMOU</span>
-                    <span class="text-[0.65rem] tracking-widest text-stone-500 uppercase mt-0.5">Avocat à la Cour</span>
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="logo-header.png" alt="Pierre Hamoumou Avocat" class="h-12 w-auto">
+                <div class="hidden sm:flex flex-col">
+                    <span class="font-serif text-xl tracking-tight text-[#2C6E68] leading-none">Pierre Hamoumou</span>
+                    <span class="text-[0.65rem] tracking-widest text-stone-500 uppercase mt-1">Avocat à la Cour</span>
                 </div>
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
                 <a href="index.html" class="hover:text-[#2C6E68] transition-colors">Accueil</a>
-                <a href="#" class="hover:text-[#2C6E68] transition-colors">Le Cabinet</a>
-                <a href="#" class="hover:text-[#2C6E68] transition-colors">Honoraires</a>
-                <a href="contact.html" class="text-[#2C6E68] font-semibold transition-colors">Prendre contact</a>
+                <a href="postulation-et-substitution.html" class="hover:text-[#2C6E68] transition-colors">Postulation et substitution</a>
+                <a href="droit-de-la-s-curit-sociale-2.html" class="hover:text-[#2C6E68] transition-colors">Droit de la sécurité sociale</a>
+                <a href="faq.html" class="hover:text-[#2C6E68] transition-colors">FAQ</a>
+                <a href="honoraires-individualis-s.html" class="hover:text-[#2C6E68] transition-colors">Honoraires</a>
+                <a href="a-propos.html" class="hover:text-[#2C6E68] transition-colors">À propos</a>
+                <a href="contact-2.html" class="px-5 py-2.5 bg-[#AED18E] text-[#1a4541] font-medium rounded-sm hover:bg-[#9dc47a] transition-colors duration-300">Contact</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -67,9 +70,12 @@ filter: grayscale(0%) contrast(1);
         <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-stone-100 p-6 shadow-lg">
             <div class="flex flex-col gap-4 text-center">
                 <a href="index.html" class="text-stone-700 py-2">Accueil</a>
-                <a href="#" class="text-stone-700 py-2">Le Cabinet</a>
-                <a href="#" class="text-stone-700 py-2">Honoraires</a>
-                <a href="contact.html" class="text-[#2C6E68] font-medium py-2">Prendre contact</a>
+                <a href="postulation-et-substitution.html" class="text-stone-700 py-2">Postulation et substitution</a>
+                <a href="droit-de-la-s-curit-sociale-2.html" class="text-stone-700 py-2">Droit de la sécurité sociale</a>
+                <a href="faq.html" class="text-stone-700 py-2">FAQ</a>
+                <a href="honoraires-individualis-s.html" class="text-stone-700 py-2">Honoraires</a>
+                <a href="a-propos.html" class="text-stone-700 py-2">À propos</a>
+                <a href="contact-2.html" class="text-[#2C6E68] font-medium py-2">Contact</a>
             </div>
         </div>
     </nav>
@@ -149,70 +155,46 @@ filter: grayscale(0%) contrast(1);
         </section>
 
         <!-- Section 3: Formulaire -->
-        <section class="py-16 md:py-24 bg-white border-t border-stone-100">
-            <div class="max-w-3xl mx-auto px-6 fade-in-up fade-in-delay-3">
-                
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-serif text-[#2C6E68] tracking-tight mb-4">Envoyer un message</h2>
-                    <p class="text-stone-500 font-light">
-                        Remplissez le formulaire ci-dessous. Le Cabinet s'engage à vous répondre sous 48h.
-                    </p>
-                </div>
+        <section class="py-16 md:py-24 bg-[#AED18E]/20">
+            <div class="max-w-4xl mx-auto px-6 fade-in-up fade-in-delay-3">
+                <div class="bg-white p-8 md:p-12 shadow-sm border-t-4 border-[#AED18E]">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-serif text-[#2C6E68] mb-2 tracking-tight">
+                            Envoyer un message
+                        </h2>
+                        <p class="text-stone-500 text-sm">
+                            Le Cabinet s'engage à vous répondre sous 48h.
+                        </p>
+                    </div>
 
-                <form action="#" method="POST" class="space-y-8">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Nom -->
-                        <div class="relative">
-                            <input type="text" id="nom" name="nom" placeholder=" " class="custom-input block w-full px-0 py-3 bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#2C6E68] transition-colors peer" required="">
-                            <label for="nom" class="absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2C6E68] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-6">
-                                Nom complet
+                    <form onsubmit="event.preventDefault();" class="space-y-4 max-w-xl mx-auto">
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">
+                                Vous êtes
                             </label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
+                                    <input type="radio" name="profile" class="accent-[#2C6E68]">
+                                    <span class="text-sm text-stone-600">Particulier</span>
+                                </label>
+                                <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
+                                    <input type="radio" name="profile" class="accent-[#2C6E68]" checked="">
+                                    <span class="text-sm text-stone-600">Professionnel</span>
+                                </label>
+                            </div>
                         </div>
-
-                        <!-- Email -->
-                        <div class="relative">
-                            <input type="email" id="email" name="email" placeholder=" " class="custom-input block w-full px-0 py-3 bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#2C6E68] transition-colors peer" required="">
-                            <label for="email" class="absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2C6E68] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-6">
-                                Adresse e-mail
-                            </label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Nom" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                            <input type="email" placeholder="Email" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
                         </div>
-                    </div>
+                        <input type="text" placeholder="Sujet" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                        <textarea rows="4" placeholder="Votre message..." class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors resize-none"></textarea>
 
-                    <!-- Sujet -->
-                    <div class="relative">
-                        <input type="text" id="sujet" name="sujet" placeholder=" " class="custom-input block w-full px-0 py-3 bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#2C6E68] transition-colors peer" required="">
-                        <label for="sujet" class="absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2C6E68] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-6">
-                            Objet de la demande
-                        </label>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="relative">
-                        <textarea id="message" name="message" rows="5" placeholder=" " class="custom-input block w-full px-0 py-3 bg-transparent border-b border-stone-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#2C6E68] transition-colors peer resize-none" required=""></textarea>
-                        <label for="message" class="absolute text-sm text-stone-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2C6E68] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-6">
-                            Votre message
-                        </label>
-                    </div>
-
-                    <!-- Disclaimer -->
-                    <div class="flex items-start gap-3 mt-4">
-                        <div class="flex items-center h-5">
-                            <input id="consent" type="checkbox" value="" class="w-4 h-4 border border-stone-300 rounded-sm bg-stone-50 focus:ring-1 focus:ring-[#2C6E68] checked:bg-[#2C6E68] accent-[#2C6E68]" required="">
-                        </div>
-                        <label for="consent" class="text-xs text-stone-400 font-light leading-relaxed">
-                            En soumettant ce formulaire, j'accepte que les informations saisies soient utilisées pour permettre au cabinet de me recontacter. Vos données sont confidentielles.
-                        </label>
-                    </div>
-
-                    <!-- Button -->
-                    <div class="pt-6">
-                        <button type="submit" class="w-full md:w-auto px-10 py-3 bg-[#2C6E68] text-white font-medium rounded-sm shadow-sm hover:bg-[#235853] hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 group">
-                            Envoyer la demande
-                            <iconify-icon icon="lucide:send" width="18" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                        <button class="w-full bg-[#2C6E68] text-white font-medium py-3 rounded-sm hover:bg-[#235853] transition-colors duration-300">
+                            Envoyer le message
                         </button>
-                    </div>
-                </form>
-
+                    </form>
+                </div>
             </div>
         </section>
 
@@ -223,36 +205,37 @@ filter: grayscale(0%) contrast(1);
         <div class="max-w-screen-xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8 mb-12 text-sm">
                 <div class="col-span-1 md:col-span-2">
-                    <span class="font-serif text-2xl text-white block mb-4">MAÎTRE HAMOUMOU</span>
+                    <img src="logo-footer.png" alt="Pierre Hamoumou Avocat" class="h-20 w-auto mb-4">
                     <p class="max-w-xs leading-relaxed text-stone-400 font-light">
                         Avocat au Barreau de Lyon.<br>
                         90 rue Servient, 69003 Lyon<br>
-                        Une expertise dédiée à la défense de vos droits.
+                        Une expertise dédiée à la postulation et au droit de la sécurité sociale.
                     </p>
                 </div>
                 <div>
                     <h5 class="text-white font-serif text-lg mb-4">Navigation</h5>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-[#AED18E] transition-colors">Accueil</a></li>
-                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Le Cabinet</a></li>
-                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Honoraires</a></li>
-                        <li><a href="contact.html" class="text-[#AED18E] transition-colors">Contact</a></li>
+                        <li><a href="postulation-et-substitution.html" class="hover:text-[#AED18E] transition-colors">Postulation et substitution</a></li>
+                        <li><a href="droit-de-la-s-curit-sociale-2.html" class="hover:text-[#AED18E] transition-colors">Droit de la sécurité sociale</a></li>
+                        <li><a href="faq.html" class="hover:text-[#AED18E] transition-colors">FAQ</a></li>
+                        <li><a href="honoraires-individualis-s.html" class="hover:text-[#AED18E] transition-colors">Honoraires</a></li>
+                        <li><a href="a-propos.html" class="hover:text-[#AED18E] transition-colors">À propos</a></li>
+                        <li><a href="contact-2.html" class="hover:text-[#AED18E] transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="text-white font-serif text-lg mb-4">Informations</h5>
                     <ul class="space-y-2">
                         <li><a href="#" class="hover:text-[#AED18E] transition-colors">Mentions légales</a></li>
-                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Confidentialité</a></li>
-                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Plan du site</a></li>
+                        <li><a href="#" class="hover:text-[#AED18E] transition-colors">Politique de confidentialité</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider">
-                <p>© 2023 Cabinet Hamoumou. Tous droits réservés.</p>
+                <p>© 2025 Cabinet Hamoumou. Tous droits réservés.</p>
                 <div class="flex gap-4">
                     <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="16"></iconify-icon></a>
-                    <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="lucide:mail" width="16"></iconify-icon></a>
                 </div>
             </div>
         </div>
