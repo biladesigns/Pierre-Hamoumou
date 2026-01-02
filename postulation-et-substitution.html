@@ -66,122 +66,175 @@ details > summary::-webkit-details-marker { display: none; }
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 bg-white overflow-hidden">
-      <!-- Abstract background elements -->
+    <header class="relative pt-32 pb-16 md:pt-44 md:pb-20 px-6 bg-white overflow-hidden">
       <div class="absolute top-0 right-0 w-1/3 h-full bg-[#AED18E]/10 -skew-x-12 translate-x-1/4 pointer-events-none"></div>
-
-      <div class="max-w-screen-xl mx-auto relative z-10 grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-8 fade-in-up">
+      <div class="max-w-screen-xl mx-auto relative z-10">
+        <div class="max-w-3xl fade-in-up">
           <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-6 bg-[#AED18E]/10">
             Service dédié aux Confrères
           </span>
           <h1 class="text-5xl md:text-7xl font-serif text-[#2C6E68] tracking-tight leading-[1.1] mb-6">
             Postulation &amp; Substitution
             <br>
-            <span class="text-stone-400 italic font-light">
-              Cour d'appel de
-            </span>
-            Lyon.
+            <span class="text-stone-400 italic font-light">Barreau de</span> Lyon.
           </h1>
-          <p class="text-lg md:text-xl text-stone-600 max-w-2xl leading-relaxed mb-10 font-light">
-            Partenaire de confiance des avocats extérieurs. Sécurisation des
-            procédures d'appel, maîtrise des délais RPVA et représentation aux
-            audiences.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#AED18E] text-[#1a4541] font-medium rounded-sm hover:bg-[#9dc47a] transition-colors duration-300 shadow-sm text-sm tracking-wide">
-              <span>Mandater le cabinet</span>
-              <iconify-icon icon="lucide:arrow-right" width="16" stroke-width="1.5"></iconify-icon>
-            </a>
-            <a href="#expertises" class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-stone-200 text-stone-600 rounded-sm hover:border-[#2C6E68] hover:text-[#2C6E68] transition-colors duration-300 bg-white text-sm tracking-wide">
-              Nos prestations
-            </a>
-          </div>
         </div>
       </div>
     </header>
 
-    <!-- Section 1: Domaines d'intervention (Split Target) -->
-    <section id="expertises" class="py-24 bg-stone-50">
+    <!-- Bloc de présentation avec photo -->
+    <section class="py-20 bg-stone-50 border-t border-stone-100">
       <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div class="max-w-2xl">
-            <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-4">
-              Missions de Postulation
+        <div class="grid md:grid-cols-12 gap-12 items-start">
+
+          <!-- Photo -->
+          <div class="md:col-span-4">
+            <div class="relative h-[400px] w-full bg-stone-200 rounded-sm shadow-sm overflow-hidden group">
+              <img src="avocat-hamoumou-1.jpg" alt="Maître Pierre HAMOUMOU" class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#2C6E68]/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 p-3 bg-white/95 backdrop-blur-sm border border-stone-100 rounded-sm shadow-sm">
+                <span class="block font-serif text-lg text-[#2C6E68]">Pierre HAMOUMOU</span>
+                <span class="block text-xs text-stone-500 uppercase tracking-wider">Avocat au Barreau de Lyon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenu lettre -->
+          <div class="md:col-span-8">
+            <h2 class="text-3xl font-serif text-[#2C6E68] mb-8 tracking-tight italic">
+              Mes Chers Confrères,
             </h2>
-            <p class="text-stone-500 font-light">
-              Une offre de service structurée pour assurer votre représentation
-              locale en toute sécurité.
+
+            <div class="prose prose-stone max-w-none space-y-6 text-stone-600 leading-relaxed">
+              <p>
+                Inscrit au Barreau de Lyon depuis janvier 2021, je peux assurer votre <strong class="text-[#2C6E68] font-medium">postulation</strong> dans vos dossiers devant la <strong class="text-[#2C6E68] font-medium">Cour d'appel de Lyon</strong>, ainsi que devant le <strong class="text-[#2C6E68] font-medium">Tribunal judiciaire de Lyon</strong>.
+              </p>
+
+              <p>
+                Dans ce cadre, je vous propose un <strong class="text-[#2C6E68] font-medium">honoraire forfaitaire</strong> couvrant l'intégralité des diligences de la procédure, de la constitution devant la Juridiction à la notification de la décision entre avocats.
+              </p>
+
+              <p>
+                Je dispose bien entendu d'un <strong class="text-[#2C6E68] font-medium">accès RPVA</strong> et maîtrise la gestion des différentes procédures via cet outil.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Suite du contenu -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="space-y-8 text-stone-600 leading-relaxed">
+
+          <div class="p-8 bg-[#AED18E]/10 border-l-4 border-[#AED18E] rounded-r-sm">
+            <h3 class="text-xl font-serif text-[#2C6E68] mb-4">Substitution aux audiences</h3>
+            <p>
+              Par ailleurs, étant amené à me déplacer très régulièrement devant de nombreux <strong class="text-[#2C6E68] font-medium">Pôles sociaux des Tribunaux judiciaires sur l'ensemble du territoire national</strong>, je suis également disponible pour vous substituer aux audiences devant ces Juridictions (plaidoirie, dépôt de dossier, avec ou sans impression de celui-ci, demande de retrait du rôle, demande de renvoi).
             </p>
           </div>
+
+          <p>
+            Afin de vous faire connaître mes disponibilités, celles-ci sont renseignées sur la plateforme <strong class="text-[#2C6E68] font-medium">KIPLAID</strong> qui a pour but de faciliter la mise en relation en fonction de nos présences aux audiences.
+          </p>
+
+          <p>
+            Par ailleurs, je suis toujours disponible pour vous substituer aux audiences devant la <strong class="text-[#2C6E68] font-medium">Cour d'appel et le Tribunal judiciaire de Lyon</strong>, toutes formations confondues, idéalement situé pour moi à quelques mètres de mon Cabinet.
+          </p>
+
+          <div class="p-8 bg-stone-50 border border-stone-100 rounded-sm">
+            <p class="mb-6">
+              Je me tiens à votre entière disposition pour toute information complémentaire dont vous auriez besoin, ou pour assurer votre postulation RPVA ou bien vous substituer à une audience, aux coordonnées renseignées dans l'onglet <a href="contact-2.html" class="text-[#2C6E68] font-medium underline decoration-[#AED18E] underline-offset-4 hover:text-[#235853]">Contact</a>.
+            </p>
+
+            <div class="text-right">
+              <p class="text-stone-500 italic mb-2">Votre bien dévoué Confrère,</p>
+              <p class="font-serif text-xl text-[#2C6E68]">Pierre HAMOUMOU</p>
+            </div>
+          </div>
+
+          <div class="flex justify-center pt-8">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#AED18E] text-[#1a4541] font-medium rounded-sm hover:bg-[#9dc47a] transition-colors duration-300 shadow-sm text-sm tracking-wide">
+              <span>Me contacter</span>
+              <iconify-icon icon="lucide:arrow-right" width="16" stroke-width="1.5"></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Résumé des services -->
+    <section id="expertises" class="py-24 bg-stone-50 border-t border-stone-100">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-serif text-[#2C6E68] tracking-tight mb-4">
+            En résumé
+          </h2>
+          <p class="text-stone-500 font-light max-w-2xl mx-auto">
+            Mes services de postulation et substitution à votre disposition.
+          </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <!-- Bloc Confrères -->
+          <!-- Bloc Postulation -->
           <article class="bg-white p-10 border-t-4 border-[#AED18E] shadow-sm hover:shadow-md transition-shadow duration-300 group">
             <div class="flex items-center justify-between mb-8">
               <span class="text-xs font-semibold tracking-widest text-stone-400 uppercase">
-                Espace Confrères
+                Postulation
               </span>
               <iconify-icon icon="lucide:scale" class="text-[#AED18E] group-hover:scale-110 transition-transform duration-500" width="32" stroke-width="1.5"></iconify-icon>
             </div>
             <h3 class="text-2xl font-serif text-[#2C6E68] mb-4 tracking-tight">
-              Postulation Cour d'appel
+              Cour d'appel &amp; TJ de Lyon
             </h3>
             <p class="text-stone-600 mb-8 leading-relaxed text-sm">
-              Gestion rigoureuse de la procédure via RPVA. Surveillance des
-              délais (908 et suivants CPC), signification des actes et
-              communication greffe.
+              Honoraire forfaitaire couvrant l'intégralité des diligences, de la constitution à la notification de la décision.
             </p>
             <ul class="space-y-3 mb-8 text-sm text-stone-600">
               <li class="flex items-start gap-3">
                 <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
-                <span>Constitution &amp; déclaration d'appel</span>
+                <span>Accès RPVA</span>
               </li>
               <li class="flex items-start gap-3">
                 <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
-                <span>Régularisation des actes</span>
+                <span>Constitution devant la Juridiction</span>
               </li>
               <li class="flex items-start gap-3">
                 <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
-                <span>Veille des délais procéduraux</span>
+                <span>Notification de la décision entre avocats</span>
               </li>
             </ul>
-            <a href="#contact" class="inline-flex items-center gap-2 text-[#2C6E68] text-sm font-medium hover:underline decoration-[#AED18E] underline-offset-4">
-              Mandater le cabinet
-              <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
-            </a>
           </article>
 
-          <!-- Bloc Particuliers -->
+          <!-- Bloc Substitution -->
           <article class="bg-white p-10 border-t-4 border-[#AED18E] shadow-sm hover:shadow-md transition-shadow duration-300 group">
             <div class="flex items-center justify-between mb-8">
               <span class="text-xs font-semibold tracking-widest text-stone-400 uppercase">
-                Audiences
+                Substitution
               </span>
               <iconify-icon icon="lucide:gavel" class="text-[#AED18E] group-hover:scale-110 transition-transform duration-500" width="32" stroke-width="1.5"></iconify-icon>
             </div>
             <h3 class="text-2xl font-serif text-[#2C6E68] mb-4 tracking-tight">
-              Substitution &amp; Vacation
+              Audiences sur tout le territoire
             </h3>
             <p class="text-stone-600 mb-8 leading-relaxed text-sm">
-              Représentation ponctuelle devant les juridictions lyonnaises.
-              Instructions respectées à la lettre et compte-rendu immédiat.
+              Disponibilités renseignées sur KIPLAID. Substitution devant les Pôles sociaux des TJ sur l'ensemble du territoire national.
             </p>
             <ul class="space-y-3 mb-8 text-sm text-stone-600">
               <li class="flex items-start gap-3">
                 <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
-                <span>Mises en état &amp; incidents</span>
+                <span>Plaidoirie</span>
               </li>
               <li class="flex items-start gap-3">
                 <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
-                <span>Plaidoiries (Cour et TJ)</span>
+                <span>Dépôt de dossier (avec ou sans impression)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <iconify-icon icon="lucide:check" class="text-[#AED18E] mt-0.5" width="16"></iconify-icon>
+                <span>Demande de retrait du rôle / renvoi</span>
               </li>
             </ul>
-            <a href="#contact" class="inline-flex items-center gap-2 text-[#2C6E68] text-sm font-medium hover:underline decoration-[#AED18E] underline-offset-4">
-              Vérifier une disponibilité
-              <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
-            </a>
           </article>
         </div>
       </div>
