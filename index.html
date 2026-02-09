@@ -19,6 +19,13 @@ h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; 
 /* Subtle Fade In */
 .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+/* Hero Card Carousel */
+.hero-slide { position: absolute; inset: 0; padding: 2rem; opacity: 0; transition: opacity 0.6s ease-in-out; display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
+.hero-slide.active { opacity: 1; pointer-events: auto; }
+.hero-dot { width: 8px; height: 8px; border-radius: 50%; background: #d6d3d1; transition: background 0.3s, transform 0.3s; cursor: pointer; }
+.hero-dot.active { background: #2C6E68; transform: scale(1.3); }
+.hero-progress-bar { height: 3px; background: #AED18E; width: 0; border-radius: 2px; }
+.hero-progress-bar.running { transition: width 5s linear; width: 100%; }
 /* Accordion Style */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
@@ -72,7 +79,7 @@ details > summary::-webkit-details-marker { display: none; }
       <div class="absolute top-0 right-0 w-1/3 h-full bg-[#AED18E]/10 -skew-x-12 translate-x-1/4 pointer-events-none"></div>
 
       <div class="max-w-screen-xl mx-auto relative z-10 grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-8 fade-in-up">
+        <div class="md:col-span-7 fade-in-up">
           <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-6 bg-[#AED18E]/10">
             Barreau de Lyon
           </span>
@@ -97,6 +104,82 @@ details > summary::-webkit-details-marker { display: none; }
             <a href="#expertises" class="inline-flex items-center justify-center gap-2 px-8 py-3 border border-stone-200 text-stone-600 rounded-sm hover:border-[#2C6E68] hover:text-[#2C6E68] transition-colors duration-300 bg-white text-sm tracking-wide">
               Découvrir mes domaines
             </a>
+          </div>
+        </div>
+
+        <!-- Carte dynamique Sécurité Sociale -->
+        <div class="md:col-span-5 fade-in-up" style="animation-delay: 0.3s;">
+          <div id="hero-carousel" class="relative bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden" style="min-height: 280px;">
+            <!-- Header fixe de la carte -->
+            <div class="px-6 pt-6 pb-4 border-b border-stone-100 flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-[#AED18E]/20 flex items-center justify-center">
+                <iconify-icon icon="lucide:shield-alert" class="text-[#2C6E68]" width="18" stroke-width="1.5"></iconify-icon>
+              </div>
+              <div>
+                <span class="block text-xs font-semibold tracking-widest text-stone-400 uppercase">Sécurité sociale</span>
+                <span class="block text-sm font-serif text-[#2C6E68]">Vos droits, notre priorité</span>
+              </div>
+            </div>
+
+            <!-- Slides container -->
+            <div class="relative" style="min-height: 180px;">
+              <!-- Slide 1 -->
+              <div class="hero-slide active" data-slide="0">
+                <div class="flex items-start gap-3 mb-4">
+                  <iconify-icon icon="lucide:alert-triangle" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
+                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
+                    Refus de prise en charge d'accident du travail : quels sont vos recours ?
+                  </p>
+                </div>
+                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>Connaître mes recours</span>
+                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                </a>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="hero-slide" data-slide="1">
+                <div class="flex items-start gap-3 mb-4">
+                  <iconify-icon icon="lucide:file-search" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
+                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
+                    Votre taux d'IPP semble sous-évalué ? Faites réviser votre dossier.
+                  </p>
+                </div>
+                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>Faire réviser mon taux</span>
+                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                </a>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="hero-slide" data-slide="2">
+                <div class="flex items-start gap-3 mb-4">
+                  <iconify-icon icon="lucide:siren" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
+                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
+                    Contrôle URSSAF ou notification d'indu : réagissez immédiatement.
+                  </p>
+                </div>
+                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>Agir maintenant</span>
+                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- Footer : dots + barre de progression -->
+            <div class="px-6 pb-5">
+              <div class="flex items-center justify-between">
+                <div class="flex gap-2" id="hero-dots">
+                  <button class="hero-dot active" data-dot="0" aria-label="Slide 1"></button>
+                  <button class="hero-dot" data-dot="1" aria-label="Slide 2"></button>
+                  <button class="hero-dot" data-dot="2" aria-label="Slide 3"></button>
+                </div>
+                <span class="text-[0.65rem] text-stone-400 uppercase tracking-widest">Auto</span>
+              </div>
+              <div class="mt-3 w-full bg-stone-100 rounded-full overflow-hidden h-[3px]">
+                <div class="hero-progress-bar running" id="hero-progress"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -503,12 +586,57 @@ details > summary::-webkit-details-marker { display: none; }
           </div>
         </div>
         <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider">
-          <p>© 2025 Cabinet Hamoumou. Tous droits réservés.</p>
+          <p>&copy; 2025 Cabinet Hamoumou. Tous droits réservés.</p>
           <div class="flex gap-4">
             <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="16"></iconify-icon></a>
           </div>
         </div>
       </div>
     </footer>
-  
+
+    <!-- Hero Carousel Script -->
+    <script>
+    (function() {
+      var current = 0;
+      var total = 3;
+      var interval = 5000;
+      var timer = null;
+      var slides = document.querySelectorAll('.hero-slide');
+      var dots = document.querySelectorAll('.hero-dot');
+      var progress = document.getElementById('hero-progress');
+
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = index % total;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        resetProgress();
+      }
+
+      function resetProgress() {
+        progress.classList.remove('running');
+        void progress.offsetWidth;
+        progress.classList.add('running');
+      }
+
+      function startAutoPlay() {
+        timer = setInterval(function() {
+          goTo(current + 1);
+        }, interval);
+        resetProgress();
+      }
+
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+          clearInterval(timer);
+          goTo(parseInt(this.getAttribute('data-dot')));
+          startAutoPlay();
+        });
+      });
+
+      startAutoPlay();
+    })();
+    </script>
+
 </body></html>
