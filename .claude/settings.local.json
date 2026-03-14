@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"D:\\\\Pierre-Hamoumou\" status)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx --version:*)",
+      "Bash(npx http-server:*)"
+    ]
+  }
+}
