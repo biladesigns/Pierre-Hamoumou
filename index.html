@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; 
 .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 /* Hero Card Carousel */
-.hero-slide { position: absolute; inset: 0; padding: 2rem; opacity: 0; transition: opacity 0.6s ease-in-out; display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
+.hero-slide { position: absolute; inset: 0; padding: 1.5rem; opacity: 0; transition: opacity 0.6s ease-in-out; display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
 .hero-slide.active { opacity: 1; pointer-events: auto; }
 .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: #d6d3d1; transition: background 0.3s, transform 0.3s; cursor: pointer; }
 .hero-dot.active { background: #2C6E68; transform: scale(1.3); }
@@ -103,61 +103,79 @@ details > summary::-webkit-details-marker { display: none; }
           </div>
         </div>
 
-        <!-- Carte dynamique Sécurité Sociale -->
+        <!-- Carousel Sécurité Sociale -->
         <div class="md:col-span-5 fade-in-up" style="animation-delay: 0.3s;">
-          <div id="hero-carousel" class="relative bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden" style="min-height: 280px;">
+          <div id="hero-carousel" class="relative bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden" style="min-height: 300px;">
             <!-- Header fixe de la carte -->
-            <div class="px-6 pt-6 pb-4 border-b border-stone-100 flex items-center gap-3">
+            <div class="px-6 pt-5 pb-4 border-b border-stone-100 flex items-center gap-3">
               <div class="w-9 h-9 rounded-full bg-[#AED18E]/20 flex items-center justify-center">
-                <iconify-icon icon="lucide:shield-alert" class="text-[#2C6E68]" width="18" stroke-width="1.5"></iconify-icon>
+                <iconify-icon icon="lucide:shield-check" class="text-[#2C6E68]" width="18" stroke-width="1.5"></iconify-icon>
               </div>
               <div>
-                <span class="block text-xs font-semibold tracking-widest text-stone-400 uppercase">Sécurité sociale</span>
-                <span class="block text-sm font-serif text-[#2C6E68]">Vos droits, notre priorité</span>
+                <span class="block text-xs font-semibold tracking-widest text-stone-400 uppercase">Droit de la sécurité sociale</span>
+                <span class="block text-sm font-serif text-[#2C6E68]">Nos domaines d'intervention</span>
               </div>
             </div>
 
             <!-- Slides container -->
-            <div class="relative" style="min-height: 180px;">
+            <div class="relative" style="min-height: 200px;">
               <!-- Slide 1 -->
               <div class="hero-slide active" data-slide="0">
-                <div class="flex items-start gap-3 mb-4">
-                  <iconify-icon icon="lucide:alert-triangle" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
-                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
-                    Refus de prise en charge d'accident du travail : quels sont vos recours ?
-                  </p>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 bg-[#AED18E]/20 rounded-full flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                    <iconify-icon icon="lucide:eye" width="20" stroke-width="1.5"></iconify-icon>
+                  </div>
+                  <h3 class="font-serif text-[#2C6E68] text-base leading-snug">Avis de contrôle URSSAF</h3>
                 </div>
-                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
-                  <span>Connaître mes recours</span>
-                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">Accompagnement dès la réception de l'avis : analyse, sécurisation de vos pratiques, préparation à la visite de l'inspecteur.</p>
+                <a href="droit-de-la-s-curit-sociale-2.html#securite-sociale" class="inline-flex items-center gap-2 px-4 py-2 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>En savoir plus</span>
+                  <iconify-icon icon="lucide:arrow-right" width="13" stroke-width="1.5"></iconify-icon>
                 </a>
               </div>
 
               <!-- Slide 2 -->
               <div class="hero-slide" data-slide="1">
-                <div class="flex items-start gap-3 mb-4">
-                  <iconify-icon icon="lucide:file-search" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
-                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
-                    Votre taux d'IPP semble sous-évalué ? Faites réviser votre dossier.
-                  </p>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 bg-[#AED18E]/20 rounded-full flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                    <iconify-icon icon="lucide:file-warning" width="20" stroke-width="1.5"></iconify-icon>
+                  </div>
+                  <h3 class="font-serif text-[#2C6E68] text-base leading-snug">Lettre d'observations URSSAF</h3>
                 </div>
-                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
-                  <span>Faire réviser mon taux</span>
-                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">Analyse des griefs, identification des irrégularités de procédure et rédaction d'une réponse motivée pour contester le redressement.</p>
+                <a href="droit-de-la-s-curit-sociale-2.html#securite-sociale" class="inline-flex items-center gap-2 px-4 py-2 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>En savoir plus</span>
+                  <iconify-icon icon="lucide:arrow-right" width="13" stroke-width="1.5"></iconify-icon>
                 </a>
               </div>
 
               <!-- Slide 3 -->
               <div class="hero-slide" data-slide="2">
-                <div class="flex items-start gap-3 mb-4">
-                  <iconify-icon icon="lucide:siren" class="text-[#AED18E] mt-0.5 flex-shrink-0" width="20" stroke-width="1.5"></iconify-icon>
-                  <p class="text-stone-700 text-sm leading-relaxed font-medium">
-                    Contrôle URSSAF ou notification d'indu : réagissez immédiatement.
-                  </p>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 bg-[#AED18E]/20 rounded-full flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                    <iconify-icon icon="lucide:alert-triangle" width="20" stroke-width="1.5"></iconify-icon>
+                  </div>
+                  <h3 class="font-serif text-[#2C6E68] text-base leading-snug">Mise en demeure &amp; Contrainte</h3>
                 </div>
-                <a href="droit-de-la-s-curit-sociale-2.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
-                  <span>Agir maintenant</span>
-                  <iconify-icon icon="lucide:arrow-right" width="14" stroke-width="1.5"></iconify-icon>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">Recours devant la CRA, opposition à contrainte devant le Pôle Social : défense à chaque étape de la procédure de recouvrement.</p>
+                <a href="droit-de-la-s-curit-sociale-2.html#securite-sociale" class="inline-flex items-center gap-2 px-4 py-2 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>En savoir plus</span>
+                  <iconify-icon icon="lucide:arrow-right" width="13" stroke-width="1.5"></iconify-icon>
+                </a>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="hero-slide" data-slide="3">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-10 h-10 bg-[#AED18E]/20 rounded-full flex items-center justify-center text-[#2C6E68] flex-shrink-0">
+                    <iconify-icon icon="lucide:sprout" width="20" stroke-width="1.5"></iconify-icon>
+                  </div>
+                  <h3 class="font-serif text-[#2C6E68] text-base leading-snug">Optimisation des charges sociales</h3>
+                </div>
+                <p class="text-stone-600 text-sm leading-relaxed mb-4">Conseil sur le statut du dirigeant, les régimes applicables et les dispositifs permettant de maîtriser les coûts à la création ou en cours d'activité.</p>
+                <a href="droit-de-la-s-curit-sociale-2.html#securite-sociale" class="inline-flex items-center gap-2 px-4 py-2 bg-[#2C6E68] text-white text-xs font-medium rounded-sm hover:bg-[#235853] transition-colors duration-300 tracking-wide">
+                  <span>En savoir plus</span>
+                  <iconify-icon icon="lucide:arrow-right" width="13" stroke-width="1.5"></iconify-icon>
                 </a>
               </div>
             </div>
@@ -169,6 +187,7 @@ details > summary::-webkit-details-marker { display: none; }
                   <button class="hero-dot active" data-dot="0" aria-label="Slide 1"></button>
                   <button class="hero-dot" data-dot="1" aria-label="Slide 2"></button>
                   <button class="hero-dot" data-dot="2" aria-label="Slide 3"></button>
+                  <button class="hero-dot" data-dot="3" aria-label="Slide 4"></button>
                 </div>
                 <span class="text-[0.65rem] text-stone-400 uppercase tracking-widest">Auto</span>
               </div>
@@ -180,6 +199,22 @@ details > summary::-webkit-details-marker { display: none; }
         </div>
       </div>
     </header>
+
+    <!-- Bandeau Audit Paie -->
+    <div class="bg-[#2C6E68] py-5 px-6">
+      <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+        <div class="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0">
+          <iconify-icon icon="lucide:clipboard-check" class="text-white" width="22" stroke-width="1.5"></iconify-icon>
+        </div>
+        <p class="text-white font-serif text-xl md:text-2xl tracking-tight">
+          Audit de conformité, sécurisation et optimisation de votre paie
+        </p>
+        <a href="contact-2.html" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#AED18E] text-[#1a4541] text-sm font-medium rounded-sm hover:bg-[#9dc47a] transition-colors duration-300">
+          <span>Nous contacter</span>
+          <iconify-icon icon="lucide:arrow-right" width="15" stroke-width="1.5"></iconify-icon>
+        </a>
+      </div>
+    </div>
 
     <!-- Présentation du Cabinet -->
     <section class="py-20 md:py-28 bg-white border-b border-stone-100">
@@ -584,7 +619,7 @@ details > summary::-webkit-details-marker { display: none; }
     <script>
     (function() {
       var current = 0;
-      var total = 3;
+      var total = 4;
       var interval = 5000;
       var timer = null;
       var slides = document.querySelectorAll('.hero-slide');
@@ -607,9 +642,7 @@ details > summary::-webkit-details-marker { display: none; }
       }
 
       function startAutoPlay() {
-        timer = setInterval(function() {
-          goTo(current + 1);
-        }, interval);
+        timer = setInterval(function() { goTo(current + 1); }, interval);
         resetProgress();
       }
 
