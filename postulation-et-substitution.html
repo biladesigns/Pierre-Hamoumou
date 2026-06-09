@@ -476,30 +476,32 @@ details > summary::-webkit-details-marker { display: none; }
             </div>
 
             <!-- Formulaire (Visuel) -->
-            <form onsubmit="event.preventDefault();" class="space-y-4">
+            <form onsubmit="submitContactForm(event)" class="space-y-4">
+              <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS">
+              <input type="hidden" name="subject" value="Nouveau message - Cabinet Hamoumou (Postulation)">
               <div>
                 <label class="block text-xs font-semibold text-stone-600 uppercase tracking-wider mb-2">
                   Vous êtes
                 </label>
                 <div class="grid grid-cols-2 gap-4">
                   <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
-                    <input type="radio" name="profile" class="accent-[#2C6E68]">
+                    <input type="radio" name="profile" value="Particulier" class="accent-[#2C6E68]">
                     <span class="text-sm text-stone-600">Particulier</span>
                   </label>
                   <label class="border border-stone-200 p-3 rounded-sm flex items-center gap-2 cursor-pointer has-[:checked]:border-[#2C6E68] has-[:checked]:bg-[#2C6E68]/5 transition-colors">
-                    <input type="radio" name="profile" class="accent-[#2C6E68]" checked="">
+                    <input type="radio" name="profile" value="Professionnel" class="accent-[#2C6E68]" checked="">
                     <span class="text-sm text-stone-600">Professionnel</span>
                   </label>
                 </div>
               </div>
               <div class="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="Nom" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
-                <input type="email" placeholder="Email" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                <input type="text" name="nom" placeholder="Nom" required class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+                <input type="email" name="email" placeholder="Email" required class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
               </div>
-              <input type="text" placeholder="Sujet" class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
-              <textarea rows="4" placeholder="Votre message..." class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors resize-none"></textarea>
-
-              <button class="w-full bg-[#2C6E68] text-white font-medium py-3 rounded-sm hover:bg-[#235853] transition-colors duration-300">
+              <input type="text" name="sujet" placeholder="Sujet" required class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors">
+              <textarea name="message" rows="4" placeholder="Votre message..." required class="w-full bg-stone-50 border border-stone-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#2C6E68] transition-colors resize-none"></textarea>
+              <div class="form-feedback hidden"></div>
+              <button type="submit" class="w-full bg-[#2C6E68] text-white font-medium py-3 rounded-sm hover:bg-[#235853] transition-colors duration-300 disabled:opacity-60">
                 Envoyer le message
               </button>
             </form>
@@ -549,4 +551,5 @@ details > summary::-webkit-details-marker { display: none; }
       </div>
     </footer>
   
+<script src="contact-form.js"></script>
 </body></html>
