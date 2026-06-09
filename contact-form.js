@@ -1,5 +1,5 @@
 // Clé Web3Forms — obtenir gratuitement sur https://web3forms.com/ en entrant pierre.hamoumou.avocat@gmail.com
-var WEB3FORMS_KEY = 'VOTRE_CLE_WEB3FORMS';
+var WEB3FORMS_KEY = '675b06e3-b9bd-4b9f-9faf-1af062a00b39';
 
 async function submitContactForm(e) {
     e.preventDefault();
