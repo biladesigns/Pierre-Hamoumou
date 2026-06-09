@@ -31,11 +31,12 @@ async function submitContactForm(e) {
             feedback.textContent = 'Message envoyé avec succès. Le cabinet vous répondra sous 48h ouvrées.';
             form.reset();
         } else {
-            throw new Error(json.message || 'Erreur serveur');
+            feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-red-50 text-red-700 border border-red-200';
+            feedback.textContent = json.message || 'Une erreur est survenue. Veuillez réessayer.';
         }
     } catch (err) {
         feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-red-50 text-red-700 border border-red-200';
-        feedback.textContent = 'Une erreur est survenue. Veuillez réessayer ou contacter le cabinet directement au 07 70 28 25 46.';
+        feedback.textContent = 'Impossible de contacter le serveur. Vérifiez votre connexion ou contactez le cabinet au 07 70 28 25 46.';
     }
 
     btn.disabled = false;
