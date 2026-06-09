@@ -22,9 +22,12 @@ async function submitContactForm(e) {
     try {
         var res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
+            headers: { 'Accept': 'application/json' },
             body: data
         });
-        var json = await res.json();
+        var text = await res.text();
+        var json;
+        try { json = JSON.parse(text); } catch(e) { json = { success: false, message: text }; }
 
         if (json.success) {
             feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-[#AED18E]/20 text-[#2C6E68] border border-[#AED18E]';
