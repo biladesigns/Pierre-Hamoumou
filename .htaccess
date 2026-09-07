@@ -6,3 +6,8 @@ Redirect 301 /les-tarifs/ /honoraires-individualis-s.html
 Redirect 301 /contact/ /contact-2.html
 Redirect 301 /postulation-substitution/ /postulation-et-substitution.html
 Redirect 301 /droit-civil/ /
+
+# Ne pas exposer les fichiers internes si le depot sert de racine web
+RedirectMatch 404 ^/tools/
+RedirectMatch 404 ^/\.git
+RedirectMatch 404 ^/\.claude
