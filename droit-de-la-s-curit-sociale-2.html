@@ -35,7 +35,133 @@ h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; 
 /* Accordion Style */
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
-</style></head>
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Avocat droit de la sécurité sociale et contentieux URSSAF à Lyon",
+      "serviceType": "Droit de la sécurité sociale et contentieux URSSAF",
+      "url": "https://pierrehamoumou-avocat.fr/droit-de-la-s-curit-sociale-2.html",
+      "description": "Défense des entreprises, dirigeants et travailleurs indépendants face à l'URSSAF : contrôle, lettre d'observations, mise en demeure, contrainte, liquidation judiciaire.",
+      "provider": {
+        "@id": "https://pierrehamoumou-avocat.fr/#cabinet"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lyon"
+        },
+        {
+          "@type": "Country",
+          "name": "France"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Interventions en droit de la sécurité sociale",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement dès la réception d'un avis de contrôle URSSAF"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Réponse à la lettre d'observations URSSAF"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement après une mise en demeure de l'URSSAF"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Défense suite à la réception d'une contrainte"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Optimisation des charges sociales lors d'une création d'entreprise"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement sectoriel (transport, BTP, sécurité privée, propreté)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement des travailleurs indépendants"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Assistance suite à une assignation en liquidation judiciaire par l'URSSAF"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Accompagnement général en droit de la sécurité sociale"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment sont fixés les honoraires ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les honoraires sont fixés en toute transparence dès le premier rendez-vous via une convention d'honoraires. Ils peuvent être établis au forfait pour une procédure ou au temps passé pour le conseil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles sont vos juridictions d'intervention ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le cabinet intervient principalement devant la Cour d'appel de Lyon et le Tribunal judiciaire de Lyon. Des déplacements à Villefranche-sur-Saône, Saint-Étienne ou Bourg-en-Bresse sont possibles sur devis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans quels délais faut-il réagir face à l'URSSAF ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les délais de recours en matière de sécurité sociale sont courts et varient selon l'acte reçu. L'opposition à contrainte, en particulier, doit être formée dans un délai de quinze jours. Il est donc vivement conseillé de consulter dès la réception de tout courrier de l'URSSAF, sans attendre l'échéance indiquée, afin de préserver l'ensemble des voies de recours."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
   <body class="bg-stone-50 text-slate-800 antialiased selection:bg-[#AED18E] selection:text-[#2C6E68]">
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-100">
@@ -472,6 +598,24 @@ details > summary::-webkit-details-marker { display: none; }
           </details>
 
           <!-- Q3 -->
+          <details class="group bg-white border border-stone-200 rounded-sm overflow-hidden">
+            <summary class="flex items-center justify-between p-5 cursor-pointer select-none">
+              <span class="font-medium text-stone-700 text-sm md:text-base">
+                Dans quels délais faut-il réagir face à l'URSSAF ?
+              </span>
+              <span class="text-[#2C6E68] transition-transform duration-300 group-open:rotate-180">
+                <iconify-icon icon="lucide:chevron-down" width="20"></iconify-icon>
+              </span>
+            </summary>
+            <div class="px-5 pb-5 pt-0 text-stone-500 text-sm leading-relaxed border-t border-transparent group-open:border-stone-100 group-open:pt-4">
+              Les délais de recours en matière de sécurité sociale sont courts et
+              varient selon l'acte reçu. L'opposition à contrainte, en
+              particulier, doit être formée dans un délai de quinze jours. Il est
+              donc vivement conseillé de consulter dès la réception de tout
+              courrier de l'URSSAF, sans attendre l'échéance indiquée, afin de
+              préserver l'ensemble des voies de recours.
+            </div>
+          </details>
         </div>
       </div>
     </section>
