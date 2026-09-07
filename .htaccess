@@ -6,6 +6,9 @@ Redirect 301 /les-tarifs/ /honoraires-individualis-s.html
 Redirect 301 /contact/ /contact-2.html
 Redirect 301 /postulation-substitution/ /postulation-et-substitution.html
 Redirect 301 /droit-civil/ /
+Redirect 301 /droit-de-la-securite-sociale/ /droit-de-la-s-curit-sociale-2.html
+Redirect 301 /droit-du-dommage-corporel/ /
+Redirect 301 /droit-des-assurances/ /
 
 # Ne pas exposer les fichiers internes si le depot sert de racine web
 RedirectMatch 404 ^/tools/
