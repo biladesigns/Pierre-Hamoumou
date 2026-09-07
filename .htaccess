@@ -1,0 +1,8 @@
+# Redirections 301 depuis les anciennes URL WordPress
+RewriteEngine On
+
+Redirect 301 /le-cabinet/ /a-propos.html
+Redirect 301 /les-tarifs/ /honoraires-individualis-s.html
+Redirect 301 /contact/ /contact-2.html
+Redirect 301 /postulation-substitution/ /postulation-et-substitution.html
+Redirect 301 /droit-civil/ /
