@@ -42,7 +42,14 @@ print('=' * 62)
 print('2. BALISES PAR PAGE')
 print('=' * 62)
 print(f'  {"PAGE":<38}{"CANON":<7}{"OG":<5}{"H1":<5}{"LD"}')
-pages = sorted(glob.glob('*.html'))
+def is_redirect_stub(path):
+    return 'http-equiv="refresh"' in open(path, encoding='utf-8').read()
+
+all_html = sorted(glob.glob('*.html') + glob.glob('*/index.html'))
+stubs = [f for f in all_html if is_redirect_stub(f)]
+pages = [f for f in all_html if f not in stubs]
+if stubs:
+    print(f'  ({len(stubs)} redirections ignorees : ' + ', '.join(s.split("/")[0] for s in stubs) + ')')
 for f in pages:
     src = open(f, encoding='utf-8').read()
     canon = len(re.findall(r'rel="canonical"', src))
@@ -105,6 +112,9 @@ print('=' * 62)
 sm = open('sitemap.xml', encoding='utf-8').read()
 listed = set(re.findall(r'<loc>https://pierrehamoumou-avocat\.fr/([^<]*)</loc>', sm))
 listed.discard('')
+def url_to_file(u):
+    return (u.rstrip('/') + '/index.html') if u.endswith('/') else u
+listed = {url_to_file(u) for u in listed}
 on_disk = set(pages) - {'index.html'}
 for miss in sorted(on_disk - listed):
     warnings.append(f'page absente du sitemap : {miss}')
@@ -114,6 +124,20 @@ for ghost in sorted(listed - on_disk):
     print(f'  URL FANTOME         {ghost}')
 if not (on_disk - listed) and not (listed - on_disk):
     print(f'  OK        {len(listed) + 1} URL, toutes correspondent a un fichier')
+
+print()
+print('=' * 62)
+print('6. CHAMPS A COMPLETER')
+print('=' * 62)
+todo = 0
+for f in pages:
+    n = open(f, encoding='utf-8').read().count('A COMPLETER') + open(f, encoding='utf-8').read().count('\u00c0 COMPL\u00c9TER')
+    if n:
+        todo += n
+        warnings.append(f'{f} : {n} champ(s) a completer avant mise en ligne')
+        print(f'  {n} champ(s)  {f}')
+if not todo:
+    print('  aucun')
 
 print()
 print('=' * 62)
