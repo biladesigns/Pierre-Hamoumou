@@ -41,6 +41,22 @@ aujourd'hui. La moyenne à 4,3 vient probablement de variations géographiques/S
 problème, et le volume est faible (7 impressions/3 mois). Pas d'action tant qu'aucune preuve
 contraire n'apparaît.
 
+### 2026-09-08 — Ne pas reproposer "le contenu ne suffit pas" sans vérifier l'indexation d'abord
+En creusant "avocat postulation lyon", découvert que `postulation-et-substitution.html` n'était
+même pas reconnue par l'inspection d'URL Google ("Google ne reconnaît pas cette URL"), alors
+qu'elle est dans le sitemap, liée depuis l'accueil, et déjà techniquement complète. Le test en
+ligne confirme la page accessible et indexable — donc pas un blocage technique, juste jamais
+crawlée/indexée sérieusement. `droit-de-la-s-curit-sociale-2.html` : "Détectée, actuellement non
+indexée" (connue via sitemap, jamais explorée). Demande d'indexation manuelle envoyée pour les
+deux via Search Console. Prochaine revue : vérifier si elles sont passées "Dans l'index" avant de
+retoucher quoi que ce soit sur le contenu ou l'autorité — inutile de discuter position tant
+qu'une page n'est pas indexée du tout.
+
+⚠️ Fiabilité outil notée en passant : l'inspection d'URL dans ce navigateur a renvoyé plusieurs
+résultats visiblement périmés (URL affichée correcte, contenu du panneau resté sur la requête
+précédente) avant de se rafraîchir correctement. Si un résultat surprend le mois prochain,
+recliquer sur la loupe ou "Tester l'URL active" avant de le prendre pour argent comptant.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -48,3 +64,8 @@ contraire n'apparaît.
   du rapport Indexation "Introuvable (404)" d'ici le 08/10/2026. Invalidé si elles réapparaissent
   en 404 après déploiement (vérifier que le .htaccess est bien celui servi en prod, pas un
   ancien cache Hostinger).
+- 2026-09-08 : demande d'indexation manuelle pour `postulation-et-substitution.html` et
+  `droit-de-la-s-curit-sociale-2.html` (les deux pages de service principales, ni l'une ni
+  l'autre "Dans l'index" selon le rapport Indexation). Effet attendu : passage en "Dans l'index"
+  sous 1-2 semaines. Vérifier le 08/10/2026. Invalidé si elles restent hors index passé ce délai
+  — indiquerait un problème d'autorité de domaine plus sérieux qu'un simple manque de crawl.
