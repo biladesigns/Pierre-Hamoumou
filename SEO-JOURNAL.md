@@ -113,8 +113,16 @@ renommage chaque mois, le gain est nul et le risque technique réel.
   schema Article et BreadcrumbList, CTA de contact en fin d'article, lien Actualités ajouté à la
   nav des 9 pages, sitemap porté à 12 URL et resoumis dans la GSC.
   Articles : TJ Poitiers 10/07/2026 n° 25/00289 (traitements automatisés, R. 243-59-1, dossier
-  plaidé par le cabinet) et Cass. 2e civ. 03/09/2026 n° 23-22.988 (faute inexcusable, angle
-  employeur). Vérifier le 23/10/2026 s'ils sont indexés et s'ils génèrent des impressions.
+  plaidé par le cabinet) et Cass. 2e civ. 03/09/2026 n° 24-11.310 (multi-établissements : taux
+  unique illicite, charge de la preuve sur l'URSSAF, annulation totale du chef calculé
+  irrégulièrement). Vérifier le 23/10/2026 s'ils sont indexés et s'ils génèrent des impressions.
+- 2026-09-23 : **piège jurisprudence noté.** La 2e chambre civile a rendu plusieurs arrêts le
+  3 septembre 2026 en matière de sécurité sociale (23-22.988 faute inexcusable, 23-23.281,
+  24-11.310 contrôle URSSAF, 24-13.178). Un premier article avait été écrit sur le 23-22.988,
+  qui n'était pas celui retenu par le client, et a été retiré avant toute exploration par Google.
+  **How to apply:** pour toute décision fournie par le client, exiger le numéro de pourvoi et le
+  vérifier à la source avant d'écrire. Une date et une chambre ne suffisent pas à identifier un
+  arrêt. Légifrance bloque l'accès automatisé, passer par courdecassation.fr (Judilibre).
 - 2026-09-23 : demande d'indexation faite pour `/articles/`. **Quota journalier Google atteint**
   avant de pouvoir soumettre les deux articles eux-mêmes. À refaire au prochain passage.
 - 2026-09-23 : `tools/seo-check.py` corrigé, il ne scannait que `*/index.html` et levait une
