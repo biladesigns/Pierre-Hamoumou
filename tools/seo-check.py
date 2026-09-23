@@ -45,7 +45,7 @@ print(f'  {"PAGE":<38}{"CANON":<7}{"OG":<5}{"H1":<5}{"LD"}')
 def is_redirect_stub(path):
     return 'http-equiv="refresh"' in open(path, encoding='utf-8').read()
 
-all_html = sorted(glob.glob('*.html') + glob.glob('*/index.html'))
+all_html = sorted(set(glob.glob('*.html') + glob.glob('*/*.html')))
 stubs = [f for f in all_html if is_redirect_stub(f)]
 pages = [f for f in all_html if f not in stubs]
 if stubs:
