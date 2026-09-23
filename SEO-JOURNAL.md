@@ -57,6 +57,18 @@ résultats visiblement périmés (URL affichée correcte, contenu du panneau res
 précédente) avant de se rafraîchir correctement. Si un résultat surprend le mois prochain,
 recliquer sur la loupe ou "Tester l'URL active" avant de le prendre pour argent comptant.
 
+### 2026-09-23 — Le client a reçu un audit externe qui pointe "seulement 3 pages indexées"
+Un cabinet SEO tiers a fait un audit pour Mathieu/le client et relevé que peu de pages sont
+indexées. Vérifié : c'est exact (3/9 "Dans l'index" ce jour), mais la cause n'est pas un défaut
+de travail sur le site (canonical/OG/H1/JSON-LD/sitemap toujours propres, cf. audit du 08/09).
+C'est un jeune domaine à faible autorité, donc crawl budget minimal de Google. Les 2 pages
+demandées manuellement le 08/09 (postulation, droit sécu sociale) sont bien passées à l'index
+depuis, preuve que la demande manuelle fonctionne. Action : demande d'indexation manuelle pour
+les 6 pages restantes (a-propos, faq, honoraires, contact-2, mentions-legales,
+politique-de-confidentialite) pour couvrir les 9 pages du sitemap. Ne pas laisser un audit
+externe faire croire que c'est un problème de qualité de site : c'est un problème de temps/
+autorité, déjà engagé dans la bonne direction avant l'audit.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -69,3 +81,10 @@ recliquer sur la loupe ou "Tester l'URL active" avant de le prendre pour argent 
   l'autre "Dans l'index" selon le rapport Indexation). Effet attendu : passage en "Dans l'index"
   sous 1-2 semaines. Vérifier le 08/10/2026. Invalidé si elles restent hors index passé ce délai
   — indiquerait un problème d'autorité de domaine plus sérieux qu'un simple manque de crawl.
+- 2026-09-23 : confirmé, les 2 pages ci-dessus sont passées "Dans l'index" (3/9 pages indexées ce
+  jour, contre 1/9 le 08/09). Demande d'indexation manuelle envoyée pour les 6 pages restantes
+  (a-propos.html, faq.html, honoraires-individualis-s.html, contact-2.html, mentions-legales/,
+  politique-de-confidentialite/). Au passage : mentions-legales/ et politique-de-confidentialite/
+  affichaient un statut "404"/"URL inconnue" périmé dans la GSC alors qu'elles répondent en 200
+  en direct (vérifié curl) — pas un vrai problème, juste un recrawl à forcer. Vérifier le
+  07/10/2026 si les 9 pages sont passées à l'index.
