@@ -69,6 +69,24 @@ politique-de-confidentialite) pour couvrir les 9 pages du sitemap. Ne pas laisse
 externe faire croire que c'est un problème de qualité de site : c'est un problème de temps/
 autorité, déjà engagé dans la bonne direction avant l'audit.
 
+### 2026-09-23 — Audit externe : le "profil de liens toxique" est une fausse alerte
+Un cabinet tiers (Meera Marketing) a démarché le client avec un audit annonçant 160 backlinks /
+91 domaines référents de mauvaise qualité, Authority Score SEMrush 2/100, et recommandant en
+priorité absolue un désaveu de liens. Vérifié à la source : le rapport Liens de la GSC affiche
+**6 liens externes / 5 domaines référents** (biladesigns.com, consulter-avocat.fr, addurl.in,
+findit.co.in, x.com), et les Actions manuelles indiquent "aucun problème détecté". Aucun désaveu
+ne sera fait. **Why:** SEMrush indexe son propre historique de crawl, pas ce que Google compte ;
+un AS bas sur un domaine de moins d'un an est mécanique, pas un symptôme. **How to apply:** ne
+jamais rouvrir ce sujet sans une action manuelle avérée dans la GSC. Le disavow est déconseillé
+par Google hors pénalité.
+
+### 2026-09-23 — URLs à encodage cassé corrigées, contact-2.html volontairement laissée
+`droit-de-la-s-curit-sociale-2.html` → `droit-de-la-securite-sociale.html` et
+`honoraires-individualis-s.html` → `honoraires.html`, avec 301 et maillage interne repris.
+`contact-2.html` n'est pas renommée : conflit avec le répertoire `/contact/` (déjà cible d'une
+301) et aucun enjeu de mot-clé sur une page contact. **How to apply:** ne pas reproposer ce
+renommage chaque mois, le gain est nul et le risque technique réel.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -88,3 +106,16 @@ autorité, déjà engagé dans la bonne direction avant l'audit.
   affichaient un statut "404"/"URL inconnue" périmé dans la GSC alors qu'elles répondent en 200
   en direct (vérifié curl) — pas un vrai problème, juste un recrawl à forcer. Vérifier le
   07/10/2026 si les 9 pages sont passées à l'index.
+- 2026-09-23 : audit externe reçu via le client. Seul point fondé retenu et corrigé (URLs à
+  encodage cassé). Fausse alerte sur les liens toxiques documentée ci-dessus. Le second document
+  du même cabinet affirmait l'absence de sitemap, contredit en direct.
+- 2026-09-23 : création de la rubrique `/articles/` (hub + 2 analyses) dans la DA du site, avec
+  schema Article et BreadcrumbList, CTA de contact en fin d'article, lien Actualités ajouté à la
+  nav des 9 pages, sitemap porté à 12 URL et resoumis dans la GSC.
+  Articles : TJ Poitiers 10/07/2026 n° 25/00289 (traitements automatisés, R. 243-59-1, dossier
+  plaidé par le cabinet) et Cass. 2e civ. 03/09/2026 n° 23-22.988 (faute inexcusable, angle
+  employeur). Vérifier le 23/10/2026 s'ils sont indexés et s'ils génèrent des impressions.
+- 2026-09-23 : demande d'indexation faite pour `/articles/`. **Quota journalier Google atteint**
+  avant de pouvoir soumettre les deux articles eux-mêmes. À refaire au prochain passage.
+- 2026-09-23 : `tools/seo-check.py` corrigé, il ne scannait que `*/index.html` et levait une
+  fausse alerte "URL fantôme" sur tout article en sous-répertoire.
