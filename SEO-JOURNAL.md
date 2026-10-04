@@ -87,6 +87,31 @@ par Google hors pénalité.
 301) et aucun enjeu de mot-clé sur une page contact. **How to apply:** ne pas reproposer ce
 renommage chaque mois, le gain est nul et le risque technique réel.
 
+### 2026-10-04 — Le compteur « 3 pages indexées » de la GSC est un faux signal
+Le rapport Indexation affichait 3 pages indexées, données figées au 19/09, soit avant tout le
+travail du 23/09. Trois sources le contredisent : la recherche `site:` liste 10 URL dans l'index,
+le rapport HTTPS de la GSC en compte 10, et le rapport Fils d'Ariane détecte le schema posé le
+23/09. **How to apply:** ne jamais conclure à partir du seul rapport Indexation, toujours
+recouper avec `site:` et l'inspection d'URL. Vérifier la date de dernière mise à jour du rapport
+avant de l'interpréter.
+
+### 2026-10-04 — Poids du site divisé par onze, sans changement de mise en page
+La page d'accueil chargeait 2,5 Mo. Causes : 4,8 Mo d'images dans le dépôt (dont un doublon
+exact de 1,6 Mo et 2,2 Mo de fichiers orphelins), des logos de 1482 px servis pour un affichage
+en 48 px, et surtout `cdn.tailwindcss.com`, soit 397 Ko de JavaScript recompilant le CSS dans le
+navigateur à chaque visite. Corrigé : WebP avec repli JPEG via `<picture>`, lazy loading,
+dimensions déclarées, et Tailwind compilé en 27 Ko de CSS. Accueil ramené à 214 Ko.
+**How to apply:** ne pas remettre de CDN Tailwind. Si une classe utilitaire nouvelle est ajoutée
+au HTML, régénérer `tailwind.css` (Tailwind v3, scan des fichiers HTML) sinon elle n'aura aucun
+effet.
+
+### 2026-10-04 — Cormorant Garamond ne s'appliquait pas aux titres
+Effet de bord découvert en compilant le CSS : le style injecté par le CDN écrasait la règle du
+site appliquant Cormorant Garamond aux titres, qui s'affichaient donc dans la serif système
+alors que la police était bien téléchargée depuis Google Fonts. La bascule en CSS compilé
+restaure la typographie prévue. Seul changement visuel de l'opération, hauteur de page identique
+au pixel.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -127,3 +152,8 @@ renommage chaque mois, le gain est nul et le risque technique réel.
   avant de pouvoir soumettre les deux articles eux-mêmes. À refaire au prochain passage.
 - 2026-09-23 : `tools/seo-check.py` corrigé, il ne scannait que `*/index.html` et levait une
   fausse alerte "URL fantôme" sur tout article en sous-répertoire.
+- 2026-10-04 : demande d'indexation pour `droit-de-la-securite-sociale.html`, sortie de l'index
+  après le renommage du 23/09. L'article multi-établissements, lui, était déjà indexé.
+- 2026-10-04 : optimisation des médias (4,8 Mo -> 409 Ko) et passage de Tailwind CDN à une
+  feuille compilée de 27 Ko. Accueil : 2503 Ko -> 214 Ko. Vérifier au prochain passage si les
+  Core Web Vitals sortent de « Aucune donnée » dans la GSC, ce qui demande un minimum de trafic.
