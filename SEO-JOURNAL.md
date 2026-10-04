@@ -112,6 +112,25 @@ alors que la police était bien téléchargée depuis Google Fonts. La bascule e
 restaure la typographie prévue. Seul changement visuel de l'opération, hauteur de page identique
 au pixel.
 
+### 2026-10-04 — Les polices du site ne se chargeaient pas, depuis l'origine
+L'URL Google Fonts du site renvoyait **HTTP 400**. Avec deux axes variables, chaque graisse doit
+être un tuple complet : `opsz,wght@9..40,300;400;500` est invalide, il fallait
+`9..40,300;9..40,400;9..40,500`. La requête entière échouait, donc ni DM Sans ni Cormorant
+Garamond n'étaient téléchargées et le site s'affichait en polices système.
+Mis en évidence par mesure : un texte en Cormorant Garamond faisait exactement la même largeur
+qu'en serif générique (773 px), et `document.fonts` était vide.
+Les deux polices sont désormais hébergées sur le site (2 fichiers variables, 97 Ko).
+**How to apply:** ne jamais se fier au `font-family` calculé pour conclure qu'une police est
+active, il reflète la déclaration CSS et non le téléchargement. Mesurer la largeur d'un texte
+témoin ou lire `document.fonts`.
+
+### 2026-10-04 — Dépendances externes supprimées, rien ne sort plus du domaine
+Tailwind CDN, Iconify et Google Fonts chargeaient du code tiers à chaque visite. Tout est
+désormais servi depuis le domaine. Seule connexion externe restante : les 4 iframes Google Maps,
+déjà en `loading="lazy"`. **À arbitrer avec le client :** ces iframes transmettent l'IP du
+visiteur à Google et déposent des cookies sans consentement préalable, ce qui mérite un avis
+pour un cabinet d'avocats. Une façade cliquable réglerait le point, c'est une décision de sa part.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -157,3 +176,8 @@ au pixel.
 - 2026-10-04 : optimisation des médias (4,8 Mo -> 409 Ko) et passage de Tailwind CDN à une
   feuille compilée de 27 Ko. Accueil : 2503 Ko -> 214 Ko. Vérifier au prochain passage si les
   Core Web Vitals sortent de « Aucune donnée » dans la GSC, ce qui demande un minimum de trafic.
+- 2026-10-04 : chaîne de dépendances externes supprimée (Tailwind CDN 397 Ko, Iconify 21 Ko,
+  Google Fonts en erreur 400). Page d'accueil : 2503 Ko théoriques avant, 109 Ko réellement
+  transférés après (Brotli actif, cache public 7 jours). 7 requêtes au total.
+- 2026-10-04 : vérifié et sans suite, compression Brotli et cache serveur déjà bien configurés
+  chez l'hébergeur, les 4 iframes Maps déjà en chargement différé. Ne pas reproposer.
