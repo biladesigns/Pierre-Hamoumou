@@ -127,6 +127,24 @@ if not (on_disk - listed) and not (listed - on_disk):
 
 print()
 print('=' * 62)
+print('5 bis. CSS COMPILE ET CACHE')
+print('=' * 62)
+import hashlib
+if os.path.exists('tailwind.css'):
+    h = hashlib.md5(open('tailwind.css','rb').read()).hexdigest()[:8]
+    refs = set(re.findall(r'tailwind\.css\?v=([a-f0-9]+)', ' '.join(open(f, encoding='utf-8').read() for f in pages)))
+    if refs == {h}:
+        print(f'  OK        empreinte {h} coherente dans toutes les pages')
+    else:
+        errors.append(f'tailwind.css : empreinte reelle {h}, referencee {refs or "aucune"} -> regenerer le CSS et remettre a jour ?v=')
+        print(f'  INCOHERENT  fichier={h}  pages={refs or "aucune"}')
+        print('              -> npx tailwindcss@3 -c tailwind.config.js -i input.css -o tailwind.css --minify')
+        print('              -> puis remplacer ?v= par la nouvelle empreinte dans les pages')
+else:
+    warnings.append('tailwind.css absent')
+
+print()
+print('=' * 62)
 print('6. CHAMPS A COMPLETER')
 print('=' * 62)
 todo = 0
