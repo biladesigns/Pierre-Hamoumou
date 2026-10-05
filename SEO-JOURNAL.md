@@ -131,6 +131,24 @@ déjà en `loading="lazy"`. **À arbitrer avec le client :** ces iframes transme
 visiteur à Google et déposent des cookies sans consentement préalable, ce qui mérite un avis
 pour un cabinet d'avocats. Une façade cliquable réglerait le point, c'est une décision de sa part.
 
+### 2026-10-05 — Maillage interne : la money page n'émettait aucun lien
+Audit des liens contextuels, c'est-à-dire hors menu et pied de page, qui sont identiques sur
+toutes les pages et n'orientent donc rien. `faq.html` était totalement isolée (0 entrant,
+0 sortant) et `droit-de-la-securite-sociale.html`, la page la plus stratégique, recevait 3 liens
+sans jamais en émettre. Corrigé : section « Dernières analyses » sur la page sécurité sociale,
+section « Pour aller plus loin » en bas de FAQ, liens FAQ en fin d'article. La FAQ passe à
+3 entrants et 3 sortants, la page sécurité sociale à 4 et 4, plus aucune page orpheline.
+**How to apply:** compter les liens du menu et du pied de page dans un audit de maillage donne
+une fausse impression de bonne santé. Les exclure avant de conclure.
+
+### 2026-10-05 — Toute régénération du CSS impose de changer la version dans l'URL
+L'hébergeur sert `tailwind.css` avec un cache de 7 jours. Après régénération, un visiteur
+récurrent gardait l'ancienne feuille et voyait les sections récentes mal mises en page, car leurs
+classes utilitaires n'y figuraient pas. L'URL porte désormais l'empreinte du fichier
+(`?v=02f5c867`). `tools/seo-check.py` compare l'empreinte réelle à celle référencée dans les
+pages et signale tout écart. **How to apply:** après chaque ajout de classes Tailwind au HTML,
+régénérer le CSS **et** mettre à jour `?v=`, sinon le rendu casse pour les visiteurs en cache.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -181,3 +199,9 @@ pour un cabinet d'avocats. Une façade cliquable réglerait le point, c'est une 
   transférés après (Brotli actif, cache public 7 jours). 7 requêtes au total.
 - 2026-10-04 : vérifié et sans suite, compression Brotli et cache serveur déjà bien configurés
   chez l'hébergeur, les 4 iframes Maps déjà en chargement différé. Ne pas reproposer.
+- 2026-10-05 : `droit-de-la-securite-sociale.html` confirmée dans l'index, la demande du 04/10 a
+  fonctionné. `honoraires.html` apparaît encore sous son ancienne URL dans les résultats, la 301
+  n'est pas encore digérée, c'est normal et sans action.
+- 2026-10-05 : maillage interne repris, versionnement du CSS mis en place, contrôle d'empreinte
+  ajouté au script mensuel. Vérifier au prochain passage si les deux articles et la page
+  honoraires sont passés à leur URL définitive dans l'index.
