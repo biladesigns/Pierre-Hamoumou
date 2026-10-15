@@ -149,6 +149,30 @@ classes utilitaires n'y figuraient pas. L'URL porte désormais l'empreinte du fi
 pages et signale tout écart. **How to apply:** après chaque ajout de classes Tailwind au HTML,
 régénérer le CSS **et** mettre à jour `?v=`, sinon le rendu casse pour les visiteurs en cache.
 
+### 2026-10-15 — Deux optimisations tirées de la donnée, pas de l'intuition
+`avocat urssaf lyon` génère 87 impressions et aucun clic. Vérification de la SERP réelle : le
+site y ressort en page 1, autour de la 8e place, face à des cabinets lyonnais comparables, sans
+média ni mur d'autorité. Son title ne contenait pas le mot « avocat », que les cinq concurrents
+classés devant ont tous. Corrigé en « Avocat URSSAF à Lyon | Contrôle et redressement ».
+Par ailleurs `redressement urssaf sur combien d'années` plaçait le site en position 15 alors que
+le sujet n'était traité sur aucune page : question ajoutée à la FAQ, contenu visible et schema
+FAQPage, avec les articles L. 244-3 et L. 244-11 du code de la sécurité sociale vérifiés à la
+source. **How to apply:** la position moyenne de la GSC est une moyenne tous appareils et toutes
+localisations ; elle peut afficher 22 alors que le site est en page 1 depuis Lyon. Toujours
+ouvrir la SERP réelle avant de conclure qu'une requête est hors de portée.
+
+### 2026-10-15 — Le compteur d'indexation s'est enfin rafraîchi
+Le rapport Indexation affiche 13 pages indexées contre 3 pendant des semaines. Confirmation
+rétrospective que le compteur était simplement en retard et qu'il n'y a jamais eu de bug.
+
+### 2026-10-15 — Le clone local de Mathieu était corrompu, pas seulement en retard
+`~/Documents/GitHub/Pierre-Hamoumou` était resté 54 commits en arrière et son dépôt git tombait
+en timeout sur `.git/logs` et sur `mmap` (dossier protégé par macOS). Remplacé par un clone neuf,
+branche `veille-juridique` reconstruite depuis les fichiers extraits, ancien dossier conservé
+sous `Pierre-Hamoumou.corrompu-20261015`. **How to apply:** `~/Documents` est protégé par macOS,
+un serveur de prévisualisation lancé dessus renvoie 404. Prévisualiser depuis une copie hors de
+ce dossier.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -205,3 +229,8 @@ régénérer le CSS **et** mettre à jour `?v=`, sinon le rendu casse pour les v
 - 2026-10-05 : maillage interne repris, versionnement du CSS mis en place, contrôle d'empreinte
   ajouté au script mensuel. Vérifier au prochain passage si les deux articles et la page
   honoraires sont passés à leur URL définitive dans l'index.
+- 2026-10-15 : 28 derniers jours contre les 28 précédents : 32 clics contre 16, 560 impressions
+  contre 245. Les deux articles pèsent 6 clics et 107 impressions à eux seuls, soit plus que la
+  page postulation sur trois mois. Title de la page URSSAF réécrit et question sur la
+  prescription ajoutée à la FAQ, recrawl demandé. Vérifier le 15/11 si `avocat urssaf lyon`
+  commence à convertir des impressions en clics.
