@@ -234,3 +234,10 @@ ce dossier.
   page postulation sur trois mois. Title de la page URSSAF réécrit et question sur la
   prescription ajoutée à la FAQ, recrawl demandé. Vérifier le 15/11 si `avocat urssaf lyon`
   commence à convertir des impressions en clics.
+- 2026-10-15 : deux articles d'octobre rédigés à la demande du client (réponse à la veille
+  d'octobre) : opposition à contrainte après le décret n° 2026-683 (substitution du jugement,
+  prescription 3 ans / 10 ans, Cass. 2e civ. 04/11/2021 n° 20-18.355 vérifié sur Judilibre) et
+  charte du cotisant contrôlé (Cass. 2e civ. 24/09/2026 n° 24-12.226 F-B, et CA Metz 24/09/2026
+  RG 23/00323, dossier plaidé par le cabinet, tous deux vérifiés sur Judilibre). Hub, section
+  « Dernières analyses » et sitemap mis à jour. Branche `articles-octobre-2026`, à fusionner sur
+  main après validation. Demander l'indexation des deux URL après mise en ligne.
