@@ -239,5 +239,6 @@ ce dossier.
   prescription 3 ans / 10 ans, Cass. 2e civ. 04/11/2021 n° 20-18.355 vérifié sur Judilibre) et
   charte du cotisant contrôlé (Cass. 2e civ. 24/09/2026 n° 24-12.226 F-B, et CA Metz 24/09/2026
   RG 23/00323, dossier plaidé par le cabinet, tous deux vérifiés sur Judilibre). Hub, section
-  « Dernières analyses » et sitemap mis à jour. Branche `articles-octobre-2026`, à fusionner sur
-  main après validation. Demander l'indexation des deux URL après mise en ligne.
+  « Dernières analyses » et sitemap mis à jour. Publiés le 19/10 sur demande de Mathieu,
+  sans attendre la relecture du client (brouillon de relecture préparé). Demander l'indexation
+  des deux URL. Vérifier le 19/11 leur indexation et leurs premières impressions.
