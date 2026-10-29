@@ -219,6 +219,18 @@ les fiches officielles, et ne jamais publier un délai vu sur une seule source. 
 délais périmés qui circulent encore : 15 jours pour l'avis de contrôle (devenu 30 en avril 2023) et
 1 mois pour la CRA (devenu 2 mois au 1er janvier 2017).
 
+### 2026-10-29 — Le formulaire affichait une erreur sur chaque envoi réussi
+
+`contact-form.js` testait `json.ok` pour décider du succès. La librairie officielle de Formspree
+(`@formspree/core` 4.0.0) décide du succès par la présence d'un champ `next`, jamais par `ok`.
+Démontré sur le site en ligne en simulant la réponse de succès : le visiteur voyait « Une erreur
+est survenue. » en rouge, alors que le message partait bien (les envois test du 19/10 étaient
+arrivés). Un prospect qui voit une erreur renvoie, appelle, ou abandonne.
+
+**How to apply** : le succès se lit sur le statut HTTP (`res.ok`), qui ne dépend pas du format de
+la réponse. Le JS est en cache 7 jours comme le CSS : il porte désormais `?v=<md5>` et
+`tools/seo-check.py` vérifie la cohérence. Toute modification du JS impose de changer la version.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -305,3 +317,7 @@ délais périmés qui circulent encore : 15 jours pour l'avis de contrôle (deve
   12 tribunaux de commerce dont celui de Lyon fonctionnent sous cette dénomination à titre
   expérimental et connaissent seuls des procédures collectives, quel que soit le statut du
   professionnel. Le texte du hub, antérieur, parlait encore du tribunal de commerce.
+- 2026-10-29 : correctif du formulaire de contact (succès lu sur le statut HTTP, messages d'erreur
+  en français, script versionné). Effet attendu : hausse des demandes reçues sur novembre par
+  rapport à octobre, à comparer avec Me Hamoumou. Invalidé si le volume reste identique, auquel
+  cas le frein est ailleurs (trafic, confiance, formulaire trop long).

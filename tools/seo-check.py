@@ -143,6 +143,20 @@ if os.path.exists('tailwind.css'):
 else:
     warnings.append('tailwind.css absent')
 
+# Meme cache de 7 jours sur le JS du formulaire : sans version dans l'URL, un
+# correctif n'atteint pas les visiteurs deja passes (bug json.ok du 29/10/2026).
+if os.path.exists('contact-form.js'):
+    hj = hashlib.md5(open('contact-form.js','rb').read()).hexdigest()[:8]
+    contenu = {f: open(f, encoding='utf-8').read() for f in pages}
+    avec_form = [f for f, c in contenu.items() if 'submitContactForm' in c]
+    refs_js = set(re.findall(r'contact-form\.js\?v=([a-f0-9]+)', ' '.join(contenu[f] for f in avec_form)))
+    sans_version = [f for f in avec_form if 'contact-form.js?v=' not in contenu[f]]
+    if refs_js == {hj} and not sans_version:
+        print(f'  OK        contact-form.js {hj} coherent sur {len(avec_form)} pages a formulaire')
+    else:
+        errors.append(f'contact-form.js : empreinte reelle {hj}, referencee {refs_js or "aucune"}, sans version : {sans_version}')
+        print(f'  INCOHERENT  contact-form.js fichier={hj} pages={refs_js or "aucune"} sans version={sans_version}')
+
 print()
 print('=' * 62)
 print('6. CHAMPS A COMPLETER')

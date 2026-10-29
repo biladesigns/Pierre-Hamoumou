@@ -20,14 +20,21 @@ async function submitContactForm(e) {
             headers: { 'Accept': 'application/json' },
             body: data
         });
-        var json = await res.json();
+        // Formspree signale le succes par le statut HTTP et un champ "next" dans la
+        // reponse, pas par un champ "ok". Tester json.ok affichait une erreur au
+        // visiteur alors que son message etait bien parti.
+        var json = {};
+        try { json = await res.json(); } catch (e) {}
 
-        if (json.ok) {
+        if (res.ok) {
             feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-[#AED18E]/20 text-[#2C6E68] border border-[#AED18E]';
             feedback.textContent = 'Message envoyé avec succès. Le cabinet vous répondra sous 48h ouvrées.';
             form.reset();
         } else {
-            var msg = json.errors ? json.errors.map(function(e){ return e.message; }).join(', ') : 'Une erreur est survenue.';
+            var champEmail = json.errors && json.errors.some(function(e){ return e.field === 'email'; });
+            var msg = champEmail
+                ? 'L\'adresse email semble incorrecte. Merci de la vérifier.'
+                : 'Le message n\'a pas pu être envoyé. Veuillez réessayer ou appeler le cabinet au 07 70 28 25 46.';
             feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-red-50 text-red-700 border border-red-200';
             feedback.textContent = msg;
         }
