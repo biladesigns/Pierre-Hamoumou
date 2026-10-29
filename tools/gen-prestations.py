@@ -16,7 +16,7 @@ import re
 import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
-CSS_VERSION = "3efdd4f2"
+CSS_VERSION = "cf858548"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -1026,7 +1026,7 @@ NAV = """    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md 
           <img width="150" height="150" src="/logo-header.png" alt="Pierre Hamoumou Avocat" class="h-12 w-auto">
           <div class="hidden sm:flex flex-col">
             <span class="font-serif text-xl tracking-tight text-[#2C6E68] leading-none">Pierre Hamoumou</span>
-            <span class="text-[0.65rem] tracking-widest text-stone-500 uppercase mt-1">Avocat à la Cour</span>
+            <span class="text-xs tracking-widest text-stone-500 uppercase mt-1">Avocat à la Cour</span>
           </div>
         </a>
 
@@ -1094,7 +1094,7 @@ FOOTER = """    <footer class="bg-[#1a4541] text-stone-400 py-12 border-t border
         <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider">
           <p>© 2026 Cabinet Hamoumou. Tous droits réservés.</p>
           <div class="flex gap-4">
-            <a href="#" class="hover:text-white transition-colors"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg></a>
+            <a href="#" class="hover:text-white transition-colors"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></g></svg></a>
           </div>
         </div>
       </div>
@@ -1125,16 +1125,16 @@ def build_parcours(current):
         if key == current:
             items.append(
                 '          <li class="flex-1 min-w-[9rem] bg-[#2C6E68] text-white p-4 rounded-sm">\n'
-                '            <span class="block text-[0.65rem] uppercase tracking-widest opacity-70 mb-1">Étape %d</span>\n'
+                '            <span class="block text-xs uppercase tracking-widest opacity-70 mb-1">Étape %d</span>\n'
                 '            <span class="block font-medium text-sm">%s</span>\n'
-                '            <span class="block text-[0.7rem] opacity-80 mt-1">Vous êtes ici</span>\n'
+                '            <span class="block text-xs opacity-80 mt-1">Vous êtes ici</span>\n'
                 '          </li>' % (i, label)
             )
         else:
             items.append(
                 '          <li class="flex-1 min-w-[9rem] bg-white border border-stone-200 p-4 rounded-sm hover:border-[#AED18E] transition-colors">\n'
                 '            <a href="%s" class="block">\n'
-                '              <span class="block text-[0.65rem] uppercase tracking-widest text-stone-400 mb-1">Étape %d</span>\n'
+                '              <span class="block text-xs uppercase tracking-widest text-stone-400 mb-1">Étape %d</span>\n'
                 '              <span class="block font-medium text-sm text-[#2C6E68]">%s</span>\n'
                 '            </a>\n'
                 '          </li>' % (href, i, label)
@@ -1142,7 +1142,7 @@ def build_parcours(current):
     return (
         '    <section class="px-6 pb-4" aria-label="Étapes de la procédure de contrôle">\n'
         '      <div class="max-w-3xl mx-auto">\n'
-        '        <h2 class="text-sm uppercase tracking-widest text-stone-400 mb-4">Les étapes de la procédure</h2>\n'
+        '        <h2 class="font-sans text-xs uppercase tracking-widest text-stone-500 mb-4">Les étapes de la procédure</h2>\n'
         '        <ul class="flex flex-wrap gap-3 list-none p-0 m-0">\n'
         + "\n".join(items) + "\n"
         '        </ul>\n'
@@ -1159,7 +1159,7 @@ def build_delai(delai):
         '        <div class="bg-[#2C6E68] text-white p-6 md:p-8 mb-12 rounded-sm flex flex-col sm:flex-row items-start sm:items-center gap-6">\n'
         '          <div class="shrink-0">\n'
         '            <span class="block text-4xl md:text-5xl font-serif leading-none">%s</span>\n'
-        '            <span class="block text-[0.65rem] uppercase tracking-widest opacity-70 mt-2">Délai clé</span>\n'
+        '            <span class="block text-xs uppercase tracking-widest opacity-70 mt-2">Délai clé</span>\n'
         '          </div>\n'
         '          <p class="text-white/90 leading-relaxed font-light text-sm md:text-base m-0">%s</p>\n'
         '        </div>\n' % (valeur, flat(texte))
@@ -1172,7 +1172,7 @@ def build_faq_html(faq):
         blocks.append(
             '          <div class="bg-white border border-stone-100 p-6 md:p-8 rounded-sm">\n'
             '            <h3 class="font-serif text-xl text-[#2C6E68] mb-3">%s</h3>\n'
-            '            <p class="text-stone-600 leading-relaxed text-[0.95rem] m-0">%s</p>\n'
+            '            <p class="text-stone-600 leading-relaxed text-base m-0">%s</p>\n'
             '          </div>' % (q, flat(a))
         )
     return (
@@ -1364,7 +1364,7 @@ def build_page(p):
           </p>
         </div>
 
-%(delai)s        <div class="prose-cabinet text-stone-600 text-base md:text-[1.0625rem]">
+%(delai)s        <div class="prose-cabinet text-stone-600 text-base md:text-lg">
 %(body)s
         </div>
 
