@@ -16,7 +16,8 @@ import re
 import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
-CSS_VERSION = "cf858548"
+FONTS_VERSION = "a6399abf"
+CSS_VERSION = "1d4acf25"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -1037,6 +1038,7 @@ NAV = """    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md 
           <a href="/articles/" class="hover:text-[#2C6E68] transition-colors">Actualités</a>
           <a href="/faq.html" class="hover:text-[#2C6E68] transition-colors">FAQ</a>
           <a href="/honoraires.html" class="hover:text-[#2C6E68] transition-colors">Honoraires</a>
+          <a href="/a-propos.html" class="hover:text-[#2C6E68] transition-colors">À propos</a>
           <a href="/contact-2.html" class="px-5 py-2.5 bg-[#AED18E] text-[#1a4541] font-medium rounded-sm hover:bg-[#9dc47a] transition-colors duration-300">Contact</a>
         </div>
 
@@ -1140,7 +1142,7 @@ def build_parcours(current):
                 '          </li>' % (href, i, label)
             )
     return (
-        '    <section class="px-6 pb-4" aria-label="Étapes de la procédure de contrôle">\n'
+        '    <section class="px-6 pt-12 pb-4" aria-label="Étapes de la procédure de contrôle">\n'
         '      <div class="max-w-3xl mx-auto">\n'
         '        <h2 class="font-sans text-xs uppercase tracking-widest text-stone-500 mb-4">Les étapes de la procédure</h2>\n'
         '        <ul class="flex flex-wrap gap-3 list-none p-0 m-0">\n'
@@ -1301,7 +1303,7 @@ def build_page(p):
 <link rel="stylesheet" href="/tailwind.css?v=%(css)s">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond.woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/fonts/fonts.css?v=%(fonts)s">
 %(style)s
 %(schema)s
 </head>
@@ -1313,6 +1315,7 @@ def build_page(p):
         "url": url,
         "base": BASE,
         "css": CSS_VERSION,
+        "fonts": FONTS_VERSION,
         "style": STYLE,
         "schema": build_schema(p),
     })
@@ -1322,7 +1325,6 @@ def build_page(p):
     # Hero
     parts.append("""    <!-- Hero -->
     <header class="relative pt-32 pb-12 md:pt-44 md:pb-16 px-6 bg-white overflow-hidden">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-[#AED18E]/10 -skew-x-12 translate-x-1/4 pointer-events-none"></div>
 
       <div class="max-w-3xl mx-auto relative z-10 fade-in-up">
         <nav aria-label="Fil d'ariane" class="text-xs text-stone-400 mb-8 flex items-center gap-2 flex-wrap">
@@ -1333,7 +1335,7 @@ def build_page(p):
           <span class="text-stone-500">%(fil)s</span>
         </nav>
 
-        <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-full mb-6 bg-[#AED18E]/10">
+        <span class="inline-block py-1 px-3 border border-[#AED18E] text-[#2C6E68] text-xs uppercase tracking-widest rounded-sm mb-6 bg-[#AED18E]/10">
           %(badge)s
         </span>
 
@@ -1341,9 +1343,9 @@ def build_page(p):
           %(h1)s
         </h1>
 
-        <div class="flex items-center gap-4 text-sm text-stone-500 border-t border-stone-100 pt-6">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm text-stone-500 border-t border-stone-100 pt-6">
           <span>Cabinet Maître Pierre Hamoumou</span>
-          <span class="text-stone-300">|</span>
+          <span class="hidden sm:inline text-stone-300">|</span>
           <span>Avocat au Barreau de Lyon</span>
         </div>
       </div>
@@ -1355,7 +1357,7 @@ def build_page(p):
         parts.append(build_parcours(p["etape"]) + "\n")
 
     # Corps
-    parts.append("""    <main class="px-6 pb-16">
+    parts.append("""    <main class="px-6 %(main_pt)s pb-16">
       <div class="max-w-3xl mx-auto">
 
         <div class="bg-white border-l-4 border-[#AED18E] p-6 md:p-8 mb-12 shadow-sm">
@@ -1375,6 +1377,7 @@ def build_page(p):
         "chapo": flat(p["chapo"]),
         "delai": build_delai(p.get("delai")),
         "body": p["body"].strip("\n"),
+        "main_pt": "pt-8" if p.get("etape") else "pt-12",
     })
 
     parts.append(build_faq_html(p["faq"]) + "\n")

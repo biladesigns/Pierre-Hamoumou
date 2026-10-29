@@ -163,6 +163,18 @@ if shutil.which('npx') and os.path.exists('tools/tailwind.config.js'):
 else:
     warnings.append('npx ou tools/tailwind.config.js absent : couverture du CSS non verifiee')
 
+# fonts.css est en cache 7 jours lui aussi : version obligatoire dans l'URL.
+if os.path.exists('fonts/fonts.css'):
+    hf = hashlib.md5(open('fonts/fonts.css','rb').read()).hexdigest()[:8]
+    tout = {f: open(f, encoding='utf-8').read() for f in pages}
+    refs_f = set(re.findall(r'fonts/fonts\.css\?v=([a-f0-9]+)', ' '.join(tout.values())))
+    sans_v = [f for f, c in tout.items() if 'fonts/fonts.css"' in c]
+    if refs_f == {hf} and not sans_v:
+        print(f'  OK        fonts.css {hf} coherent dans toutes les pages')
+    else:
+        errors.append(f'fonts.css : empreinte reelle {hf}, referencee {refs_f or "aucune"}, sans version : {sans_v}')
+        print(f'  INCOHERENT  fonts.css fichier={hf} pages={refs_f or "aucune"} sans version={sans_v}')
+
 # Meme cache de 7 jours sur le JS du formulaire : sans version dans l'URL, un
 # correctif n'atteint pas les visiteurs deja passes (bug json.ok du 29/10/2026).
 if os.path.exists('contact-form.js'):
