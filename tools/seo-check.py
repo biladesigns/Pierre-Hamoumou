@@ -138,10 +138,30 @@ if os.path.exists('tailwind.css'):
     else:
         errors.append(f'tailwind.css : empreinte reelle {h}, referencee {refs or "aucune"} -> regenerer le CSS et remettre a jour ?v=')
         print(f'  INCOHERENT  fichier={h}  pages={refs or "aucune"}')
-        print('              -> npx tailwindcss@3 -c tailwind.config.js -i input.css -o tailwind.css --minify')
+        print('              -> npx tailwindcss@3.4.17 -c tools/tailwind.config.js -i tools/input.css -o tailwind.css --minify')
         print('              -> puis remplacer ?v= par la nouvelle empreinte dans les pages')
 else:
     warnings.append('tailwind.css absent')
+
+# Le CSS compile couvre-t-il toutes les classes utilisees ? Le 29/10/2026, 17 classes
+# manquaient en production (pages ajoutees sans recompiler, JS jamais scanne).
+import subprocess, tempfile, shutil
+if shutil.which('npx') and os.path.exists('tools/tailwind.config.js'):
+    tmp = os.path.join(tempfile.gettempdir(), 'seo-check-tw.css')
+    r = subprocess.run(['npx', '-y', 'tailwindcss@3.4.17', '-c', 'tools/tailwind.config.js',
+                        '-i', 'tools/input.css', '-o', tmp, '--minify'],
+                       capture_output=True, text=True)
+    if r.returncode == 0 and os.path.exists(tmp):
+        if open(tmp, 'rb').read() == open('tailwind.css', 'rb').read():
+            print('  OK        tailwind.css couvre toutes les classes utilisees')
+        else:
+            errors.append('tailwind.css perime : des classes utilisees manquent, recompiler puis changer ?v=')
+            print('  PERIME    tailwind.css ne correspond pas aux pages : recompiler')
+            print('              -> npx tailwindcss@3.4.17 -c tools/tailwind.config.js -i tools/input.css -o tailwind.css --minify')
+    else:
+        warnings.append('compilation Tailwind de controle impossible')
+else:
+    warnings.append('npx ou tools/tailwind.config.js absent : couverture du CSS non verifiee')
 
 # Meme cache de 7 jours sur le JS du formulaire : sans version dans l'URL, un
 # correctif n'atteint pas les visiteurs deja passes (bug json.ok du 29/10/2026).

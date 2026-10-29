@@ -16,7 +16,7 @@ import re
 import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
-CSS_VERSION = "02f5c867"
+CSS_VERSION = "3efdd4f2"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")

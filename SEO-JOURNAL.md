@@ -231,6 +231,21 @@ arrivés). Un prospect qui voit une erreur renvoie, appelle, ou abandonne.
 la réponse. Le JS est en cache 7 jours comme le CSS : il porte désormais `?v=<md5>` et
 `tools/seo-check.py` vérifie la cohérence. Toute modification du JS impose de changer la version.
 
+### 2026-10-29 — Le CSS en production ne couvrait pas toutes les classes utilisées
+
+17 classes manquaient dans `tailwind.css`. Trois venaient du formulaire (`bg-red-50`,
+`text-red-700`, `border-red-200`) : la compilation d'octobre ne lisait pas les fichiers JS, si bien
+que les messages d'erreur du formulaire ne se sont jamais affichés en rouge. Les quatorze autres
+venaient des pages créées le jour même, publiées sans recompiler malgré la règle du 05/10.
+
+**Pourquoi** : la règle reposait sur la mémoire de celui qui modifie. Elle a été oubliée le jour
+même où elle s'appliquait.
+
+**How to apply** : la configuration de compilation est maintenant versionnée
+(`tools/tailwind.config.js`, `tools/input.css`, qui scanne aussi les `.js`), et
+`tools/seo-check.py` recompile à blanc et compare : un CSS périmé fait échouer le contrôle. Lancer
+`seo-check.py` avant chaque push.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
