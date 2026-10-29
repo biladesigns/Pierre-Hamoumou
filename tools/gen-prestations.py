@@ -17,7 +17,7 @@ import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
 FONTS_VERSION = "a6399abf"
-CSS_VERSION = "1d4acf25"
+CSS_VERSION = "04e43a95"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -1018,7 +1018,7 @@ h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Cormorant Garamond', serif; 
 .prose-cabinet ul { margin-bottom: 1.5rem; padding-left: 0; }
 .prose-cabinet li { position: relative; padding-left: 1.5rem; margin-bottom: 0.85rem; line-height: 1.75; }
 .prose-cabinet li::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; background-color: #AED18E; border-radius: 9999px; }
-.prose-cabinet strong { color: #1a4541; font-weight: 500; }
+.prose-cabinet strong { color: #292524; font-weight: 600; }
 </style>"""
 
 NAV = """    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-100">
@@ -1173,7 +1173,7 @@ def build_faq_html(faq):
     for q, a in faq:
         blocks.append(
             '          <div class="bg-white border border-stone-100 p-6 md:p-8 rounded-sm">\n'
-            '            <h3 class="font-serif text-xl text-[#2C6E68] mb-3">%s</h3>\n'
+            '            <h3 class="font-sans text-base font-medium text-stone-800 mb-3">%s</h3>\n'
             '            <p class="text-stone-600 leading-relaxed text-base m-0">%s</p>\n'
             '          </div>' % (q, flat(a))
         )

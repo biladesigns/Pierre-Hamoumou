@@ -246,6 +246,26 @@ même où elle s'appliquait.
 `tools/seo-check.py` recompile à blanc et compare : un CSS périmé fait échouer le contrôle. Lancer
 `seo-check.py` avant chaque push.
 
+### 2026-10-29 — Passe de raffinement visuel : ce qui a été retiré ne revient pas
+
+Passe menée avec le skill `design-refinement` (adapté de kubre/skills), audit indépendant par un
+agent à chaque tour. Retirés : la diagonale décorative des héros (17 pages), les ronds d'icônes à
+côté des titres du hub, les barrettes vertes sous les titres, les icônes des valeurs de l'accueil,
+la mention « Auto » du carrousel. Unifiés : une graisse d'icône (1.5), une échelle de tailles sans
+valeur arbitraire, deux niveaux de transparence du vert tendre, étiquettes à angle vif, une seule
+pastille d'icône. Ajoutés : vraie italique Cormorant (`fonts/cormorant-garamond-italic.woff2`) et
+chiffres alignés dans les titres.
+
+**Pourquoi** : l'impression d'« IA slop » venait de décors répétés à l'identique et de valeurs
+choisies au hasard (14 tailles de texte, 5 opacités d'accent, 2 graisses d'icônes), pas de la
+charte, qui reste intacte.
+
+**How to apply** : ne pas réintroduire ces décors sur une nouvelle page. Les accents hauts et fins
+de la Cormorant sont son dessin normal, pas un bug (vérifié le 29/10 contre le fichier Google).
+La couleur des boutons (vert tendre, sapin, contour) n'a pas été unifiée : décision de marque à
+prendre avec le client. Le « parti pris » qui donnerait une identité propre au site reste à faire,
+séparément, sur une page témoin.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
