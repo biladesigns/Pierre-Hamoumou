@@ -21,3 +21,13 @@ Redirect 301 /droit-de-la-securite-sociale.html /droit-securite-sociale-avocat-u
 RedirectMatch 404 ^/tools/
 RedirectMatch 404 ^/\.git
 RedirectMatch 404 ^/\.claude
+
+# Pages HTML : le navigateur revalide a chaque visite (reponse 304 si rien n'a
+# change). Sans consigne, il gardait une page plusieurs heures et ignorait les
+# correctifs (constate le 29/10/2026 sur le formulaire). CSS et JS restent en
+# cache long, versionnes par ?v= dans l'URL.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
