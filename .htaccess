@@ -6,13 +6,16 @@ Redirect 301 /les-tarifs/ /honoraires.html
 Redirect 301 /contact/ /contact-2.html
 Redirect 301 /postulation-substitution/ /postulation-et-substitution.html
 Redirect 301 /droit-civil/ /
-Redirect 301 /droit-de-la-securite-sociale/ /droit-de-la-securite-sociale.html
+Redirect 301 /droit-de-la-securite-sociale/ /droit-securite-sociale-avocat-urssaf.html
 Redirect 301 /droit-du-dommage-corporel/ /
 Redirect 301 /droit-des-assurances/ /
 
 # Anciennes URL a encodage casse, renommees le 23/09/2026
-Redirect 301 /droit-de-la-s-curit-sociale-2.html /droit-de-la-securite-sociale.html
+Redirect 301 /droit-de-la-s-curit-sociale-2.html /droit-securite-sociale-avocat-urssaf.html
 Redirect 301 /honoraires-individualis-s.html /honoraires.html
+
+# URL renommee le 29/10/2026 a la demande du client (mot cle dans l'URL)
+Redirect 301 /droit-de-la-securite-sociale.html /droit-securite-sociale-avocat-urssaf.html
 
 # Ne pas exposer les fichiers internes si le depot sert de racine web
 RedirectMatch 404 ^/tools/

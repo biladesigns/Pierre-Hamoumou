@@ -173,6 +173,52 @@ sous `Pierre-Hamoumou.corrompu-20261015`. **How to apply:** `~/Documents` est pr
 un serveur de prévisualisation lancé dessus renvoie 404. Prévisualiser depuis une copie hors de
 ce dossier.
 
+### 2026-10-29 — Renommage de la money page : accepté, mais c'était le dernier
+
+Le client a demandé de renommer `droit-de-la-securite-sociale.html` en
+`droit-securite-sociale-avocat-urssaf.html`, pour mettre les mots clés dans l'URL. Accepté et fait,
+avec un 301 propre et les anciennes URL aplaties (`/droit-de-la-s-curit-sociale-2.html` et
+`/droit-de-la-securite-sociale/` pointent désormais directement sur la nouvelle, sans chaîne).
+
+**Pourquoi** : le mot clé dans l'URL est un facteur très faible, et la page venait d'être renommée
+le 23/09/2026 puis indexée. Un second renommage en cinq semaines coûte une période de réévaluation
+par Google. Ce qui a fait pencher la balance : le renommage était groupé avec la création des 8
+pages filles, donc un seul épisode de recrawl au lieu de deux.
+
+**How to apply** : ne pas reproposer de renommer cette page. Si le client redemande un changement
+d'URL sur une page indexée, dire que le gain est marginal et que le coût est réel, et proposer à la
+place de créer une page dédiée sur le mot clé visé. Noter aussi que la demande initiale contenait
+des accents (`droit-sécurité-sociale-avocat-urssaf`) : les URL accentuées sont exactement le bug
+corrigé le 23/09/2026, elles ne doivent jamais être mises en production.
+
+### 2026-10-29 — Une page par prestation, le hub devient un hub
+
+Les 9 items de la page sécurité sociale ont donné 8 pages dédiées (le 9e, « accompagnement
+général », était trop générique et aurait dupliqué le hub). Chaque page fait 930 à 1 290 mots de
+contenu original, avec schema Service + BreadcrumbList + FAQPage, un encadré « délai clé » et, pour
+les 4 pages de procédure, un composant de parcours qui situe le lecteur dans la chaîne avis,
+observations, mise en demeure, contrainte.
+
+**Pourquoi** : la comparaison GSC avec auravocats.com du 22/10 a montré que l'écart d'impressions
+(21 600 contre 1 010) ne venait ni du CTR ni de la position, meilleurs chez Hamoumou, mais du
+nombre de requêtes couvertes : 958 contre 42. Le levier est la surface, pas la qualité.
+
+**How to apply** : les pages sont générées par `tools/gen-prestations.py`, contenu compris. Pour
+modifier une page, modifier le script et le relancer, jamais le HTML directement. Le script refuse
+d'écrire s'il détecte un tiret cadratin ou demi-cadratin.
+
+### 2026-10-29 — Toujours exiger le numéro de pourvoi, et vérifier les délais en double source
+
+Les délais cités sur les nouvelles pages (30 jours pour l'avis, 30 ou 60 pour les observations,
+2 mois pour la CRA, 15 jours pour l'opposition, 3 mois de durée de contrôle, prescription 3 ou 5
+ans) ont tous été recoupés sur au moins deux sources indépendantes. Légifrance bloque
+l'automatisation, les identifiants LEGIARTI renvoient des 404.
+
+**How to apply** : passer par les décisions relayées sur doctrine.fr, les analyses de cabinets et
+les fiches officielles, et ne jamais publier un délai vu sur une seule source. Attention aux
+délais périmés qui circulent encore : 15 jours pour l'avis de contrôle (devenu 30 en avril 2023) et
+1 mois pour la CRA (devenu 2 mois au 1er janvier 2017).
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -242,3 +288,20 @@ ce dossier.
   « Dernières analyses » et sitemap mis à jour. Publiés le 19/10 sur demande de Mathieu,
   sans attendre la relecture du client (brouillon de relecture préparé). Demander l'indexation
   des deux URL. Vérifier le 19/11 leur indexation et leurs premières impressions.
+- 2026-10-29 : à la demande du client, création de 8 pages de prestation à partir des items de la
+  page sécurité sociale, et renommage du hub en `droit-securite-sociale-avocat-urssaf.html`.
+  Le site passe de 14 à 22 URL au sitemap. Maillage : chaque nouvelle page reçoit 2 à 8 liens
+  éditoriaux (hub, FAQ, articles, pages soeurs), aucune page orpheline. Effet attendu : hausse du
+  nombre de requêtes couvertes en GSC, qui est le vrai écart avec auravocats.com. Mesure le
+  2026-11-29 : le nombre de requêtes distinctes doit dépasser 70 (contre 42 au 22/10), et au moins
+  4 des 8 nouvelles pages doivent générer des impressions. Invalidé si, passé un mois, les pages
+  sont indexées mais ne remontent sur aucune requête, ce qui signifierait que le sujet est trop
+  concurrentiel pour l'autorité actuelle du domaine et qu'il faut viser des requêtes plus longues.
+- 2026-10-29 : corrigé au passage, la politique de confidentialité déclarait encore Google Fonts
+  comme destinataire alors que les polices sont auto-hébergées depuis le 23/09/2026. Page de nature
+  juridique, l'information était devenue fausse.
+- 2026-10-29 : la page liquidation judiciaire mentionne le tribunal des activités économiques de
+  Lyon, et non le tribunal de commerce. Depuis le 1er janvier 2025 et jusqu'au 31 décembre 2028,
+  12 tribunaux de commerce dont celui de Lyon fonctionnent sous cette dénomination à titre
+  expérimental et connaissent seuls des procédures collectives, quel que soit le statut du
+  professionnel. Le texte du hub, antérieur, parlait encore du tribunal de commerce.
