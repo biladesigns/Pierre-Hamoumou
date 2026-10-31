@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Actualités du Cabinet Maître Pierre Hamoumou</title>
+    <link>https://pierrehamoumou-avocat.fr/articles/</link>
+    <atom:link href="https://pierrehamoumou-avocat.fr/articles/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Analyses de jurisprudence et de réglementation en droit de la sécurité sociale et en contentieux URSSAF, par Maître Pierre Hamoumou, avocat au Barreau de Lyon.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Mon, 19 Oct 2026 07:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Charte du cotisant contrôlé : Cour de cassation et cour d'appel de Metz, deux issues opposées</title>
+      <link>https://pierrehamoumou-avocat.fr/articles/charte-du-cotisant-controle-avis-de-controle-urssaf.html</link>
+      <guid isPermaLink="true">https://pierrehamoumou-avocat.fr/articles/charte-du-cotisant-controle-avis-de-controle-urssaf.html</guid>
+      <pubDate>Mon, 19 Oct 2026 07:00:00 GMT</pubDate>
+      <description>24 septembre 2026 : la Cour de cassation valide un avis de contrôle URSSAF renvoyant à la charte du cotisant, la cour d'appel de Metz annule un redressement faute d'accès à la charte. Ce qui fait la différence.</description>
+      <enclosure url="https://pierrehamoumou-avocat.fr/og/charte-du-cotisant-controle-avis-de-controle-urssaf.png" length="64647" type="image/png"/>
+    </item>
+    <item>
+      <title>Opposition à contrainte URSSAF : le jugement remplace la contrainte depuis le 1er octobre 2026</title>
+      <link>https://pierrehamoumou-avocat.fr/articles/opposition-contrainte-urssaf-jugement-se-substitue.html</link>
+      <guid isPermaLink="true">https://pierrehamoumou-avocat.fr/articles/opposition-contrainte-urssaf-jugement-se-substitue.html</guid>
+      <pubDate>Mon, 19 Oct 2026 07:00:00 GMT</pubDate>
+      <description>Décret du 27 juillet 2026 : la décision statuant sur opposition à contrainte se substitue désormais à la contrainte et est exécutoire de droit. Ce que cela change pour la prescription et la stratégie du cotisant.</description>
+      <enclosure url="https://pierrehamoumou-avocat.fr/og/opposition-contrainte-urssaf-jugement-se-substitue.png" length="61021" type="image/png"/>
+    </item>
+    <item>
+      <title>Contrôle URSSAF multi-établissements : taux unique illicite et annulation totale du redressement</title>
+      <link>https://pierrehamoumou-avocat.fr/articles/controle-urssaf-multi-etablissements-taux-unique.html</link>
+      <guid isPermaLink="true">https://pierrehamoumou-avocat.fr/articles/controle-urssaf-multi-etablissements-taux-unique.html</guid>
+      <pubDate>Wed, 23 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Cour de cassation, 2e chambre civile, 3 septembre 2026, n° 24-11.310 : l'URSSAF ne peut pas appliquer un taux unique à tous les établissements d'une entreprise, et un redressement calculé selon une méthode irrégulière est annulé en totalité. Analyse pour les groupes et réseaux multi-sites.</description>
+      <enclosure url="https://pierrehamoumou-avocat.fr/og/controle-urssaf-multi-etablissements-taux-unique.png" length="61420" type="image/png"/>
+    </item>
+    <item>
+      <title>Contrôle URSSAF et traitements automatisés : 63 chefs de redressement annulés</title>
+      <link>https://pierrehamoumou-avocat.fr/articles/controle-urssaf-traitements-automatises.html</link>
+      <guid isPermaLink="true">https://pierrehamoumou-avocat.fr/articles/controle-urssaf-traitements-automatises.html</guid>
+      <pubDate>Wed, 23 Sep 2026 07:00:00 GMT</pubDate>
+      <description>Jugement du 10 juillet 2026 : le tribunal judiciaire de Poitiers annule 63 chefs d'un redressement URSSAF de 790 638 €. L'inspecteur avait exploité les fichiers de l'entreprise par traitement automatisé sans respecter l'article R. 243-59-1.</description>
+      <enclosure url="https://pierrehamoumou-avocat.fr/og/controle-urssaf-traitements-automatises.png" length="57034" type="image/png"/>
+    </item>
+  </channel>
+</rss>

@@ -189,6 +189,28 @@ if os.path.exists('contact-form.js'):
         errors.append(f'contact-form.js : empreinte reelle {hj}, referencee {refs_js or "aucune"}, sans version : {sans_version}')
         print(f'  INCOHERENT  contact-form.js fichier={hj} pages={refs_js or "aucune"} sans version={sans_version}')
 
+
+print()
+print('=' * 62)
+print('5 ter. DIFFUSION LINKEDIN (flux RSS et images d apercu)')
+print('=' * 62)
+# Zapier publie un post LinkedIn a chaque nouvel item de articles/feed.xml.
+# Un article absent du flux ne sera jamais publie : on le signale.
+arts = sorted(f for f in glob.glob('articles/*.html') if not f.endswith('index.html'))
+feed = open('articles/feed.xml', encoding='utf-8').read() if os.path.exists('articles/feed.xml') else ''
+for f in arts:
+    slug = os.path.basename(f)[:-5]
+    manques = []
+    if f'/articles/{slug}.html</link>' not in feed: manques.append('absent du flux')
+    if not os.path.exists(f'og/{slug}.png'): manques.append('image og/ manquante')
+    if f'/og/{slug}.png"' not in open(f, encoding='utf-8').read(): manques.append('og:image non branchee')
+    if manques:
+        errors.append(f'{f} : ' + ', '.join(manques) + ' -> node tools/publier-articles.mjs')
+        print(f'  A FAIRE   {f} : ' + ', '.join(manques))
+    else:
+        print(f'  OK        {f}')
+if not feed:
+    errors.append('articles/feed.xml absent -> node tools/publier-articles.mjs')
 print()
 print('=' * 62)
 print('6. CHAMPS A COMPLETER')

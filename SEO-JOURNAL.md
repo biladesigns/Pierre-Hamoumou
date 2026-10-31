@@ -266,6 +266,33 @@ La couleur des boutons (vert tendre, sapin, contour) n'a pas été unifiée : d�
 prendre avec le client. Le « parti pris » qui donnerait une identité propre au site reste à faire,
 séparément, sur une page témoin.
 
+### 2026-10-31 — Diffusion LinkedIn : chaque article passe par le flux RSS
+
+Le client veut un post LinkedIn par article, sur son profil personnel. Choix : flux RSS
+`articles/feed.xml` surveillé par Zapier (« RSS by Zapier, New Item in Feed » vers « LinkedIn,
+Create Share Update »). Écarté : un script maison sur l'API LinkedIn, dont le jeton de publication
+sur un profil personnel expire tous les 60 jours sans renouvellement automatique (hors partenaires
+agréés), ce qui ferait échouer les posts en silence tous les deux mois.
+
+Chaque article a son image d'aperçu `og/<slug>.png` (1200 x 627, polices du site, rendue par
+Chrome pour garder les chiffres alignés). Avant, l'aperçu LinkedIn affichait le petit logo.
+
+**How to apply** : après chaque ajout d'article, lancer `node tools/publier-articles.mjs` (une
+fois `npm install` dans `tools/`). Il génère l'image, branche `og:image` et reconstruit le flux.
+`tools/seo-check.py` échoue si un article manque au flux. Le texte du post est la balise
+`<meta name="linkedin-post" content="...">` de l'article si elle existe, sinon sa meta
+description : pour un post soigné, écrire cette balise (2 à 4 phrases, ton du cabinet, sans
+emoji). Zapier ne publie que les articles apparus après l'activation : les 4 articles existants ne
+seront pas repostés automatiquement. Ne jamais changer l'URL d'un article publié : c'est
+l'identifiant de l'item, un changement provoquerait un second post.
+
+### 2026-10-31 — `font-sans` de Tailwind n'est pas DM Sans
+
+La classe `font-sans` applique la police système, pas DM Sans (définie sur `body` dans les styles
+de chaque page). 33 occurrences affichaient du texte en police de secours, dont celles ajoutées au
+tour 1 de design. **How to apply** : pour forcer DM Sans sur un titre, utiliser
+`font-['DM_Sans',sans-serif]`, jamais `font-sans`.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -356,3 +383,7 @@ séparément, sur une page témoin.
   en français, script versionné). Effet attendu : hausse des demandes reçues sur novembre par
   rapport à octobre, à comparer avec Me Hamoumou. Invalidé si le volume reste identique, auquel
   cas le frein est ailleurs (trafic, confiance, formulaire trop long).
+- 2026-10-31 : flux RSS des articles et images d'aperçu LinkedIn en ligne, en attente de la
+  connexion Zapier au compte LinkedIn de Me Hamoumou. Effet attendu : un post par nouvel article,
+  sans intervention. Invalidé si un article publié n'a pas son post sous 24 h (vérifier l'historique
+  du Zap).

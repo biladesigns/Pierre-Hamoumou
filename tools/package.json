@@ -1,0 +1,9 @@
+{
+  "name": "pierre-hamoumou-tools",
+  "private": true,
+  "description": "Outils de publication du site (images d'apercu LinkedIn, flux RSS des articles).",
+  "type": "module",
+  "dependencies": {
+    "puppeteer-core": "23.11.1"
+  }
+}

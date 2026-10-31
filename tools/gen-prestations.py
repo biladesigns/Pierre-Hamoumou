@@ -17,7 +17,7 @@ import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
 FONTS_VERSION = "a6399abf"
-CSS_VERSION = "04e43a95"
+CSS_VERSION = "67ace7d8"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -1144,7 +1144,7 @@ def build_parcours(current):
     return (
         '    <section class="px-6 pt-12 pb-4" aria-label="Étapes de la procédure de contrôle">\n'
         '      <div class="max-w-3xl mx-auto">\n'
-        '        <h2 class="font-sans text-xs uppercase tracking-widest text-stone-500 mb-4">Les étapes de la procédure</h2>\n'
+        '        <h2 class="font-[\'DM_Sans\',sans-serif] text-xs uppercase tracking-widest text-stone-500 mb-4">Les étapes de la procédure</h2>\n'
         '        <ul class="flex flex-wrap gap-3 list-none p-0 m-0">\n'
         + "\n".join(items) + "\n"
         '        </ul>\n'
@@ -1173,7 +1173,7 @@ def build_faq_html(faq):
     for q, a in faq:
         blocks.append(
             '          <div class="bg-white border border-stone-100 p-6 md:p-8 rounded-sm">\n'
-            '            <h3 class="font-sans text-base font-medium text-stone-800 mb-3">%s</h3>\n'
+            '            <h3 class="font-[\'DM_Sans\',sans-serif] text-base font-medium text-stone-800 mb-3">%s</h3>\n'
             '            <p class="text-stone-600 leading-relaxed text-base m-0">%s</p>\n'
             '          </div>' % (q, flat(a))
         )
