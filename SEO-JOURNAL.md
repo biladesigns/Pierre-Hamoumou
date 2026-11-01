@@ -266,25 +266,26 @@ La couleur des boutons (vert tendre, sapin, contour) n'a pas été unifiée : d�
 prendre avec le client. Le « parti pris » qui donnerait une identité propre au site reste à faire,
 séparément, sur une page témoin.
 
-### 2026-10-31 — Diffusion LinkedIn : chaque article passe par le flux RSS
+### 2026-11-01 — Diffusion LinkedIn : à la main, le jour de publication, sans Zapier
 
-Le client veut un post LinkedIn par article, sur son profil personnel. Choix : flux RSS
-`articles/feed.xml` surveillé par Zapier (« RSS by Zapier, New Item in Feed » vers « LinkedIn,
-Create Share Update »). Écarté : un script maison sur l'API LinkedIn, dont le jeton de publication
-sur un profil personnel expire tous les 60 jours sans renouvellement automatique (hors partenaires
-agréés), ce qui ferait échouer les posts en silence tous les deux mois.
+Le client veut un post LinkedIn par article, sur son profil personnel. Mathieu publie 2 articles
+par mois, le même jour. Routine retenue : ce jour-là, Mathieu publie le post du premier article
+et programme celui du second à J+10, depuis le LinkedIn de Me Hamoumou ouvert dans son Chrome.
+Claude prépare les deux textes et des liens qui ouvrent l'éditeur LinkedIn déjà rempli
+(`https://www.linkedin.com/feed/?shareActive=true&text=<texte encodé>`, vérifié le 01/11/2026 :
+le texte s'affiche et LinkedIn construit la carte de l'article avec son image d'aperçu).
 
-Chaque article a son image d'aperçu `og/<slug>.png` (1200 x 627, polices du site, rendue par
-Chrome pour garder les chiffres alignés). Avant, l'aperçu LinkedIn affichait le petit logo.
+Écartés : Zapier (Mathieu ne veut pas d'outil tiers), un script sur l'API LinkedIn (jeton de 60
+jours sans renouvellement pour un profil personnel), et la publication automatique par un robot
+dans Chrome (interdite par les conditions d'utilisation de LinkedIn, risque de restriction du
+compte du client, et publication publique sans validation humaine).
 
-**How to apply** : après chaque ajout d'article, lancer `node tools/publier-articles.mjs` (une
-fois `npm install` dans `tools/`). Il génère l'image, branche `og:image` et reconstruit le flux.
-`tools/seo-check.py` échoue si un article manque au flux. Le texte du post est la balise
-`<meta name="linkedin-post" content="...">` de l'article si elle existe, sinon sa meta
-description : pour un post soigné, écrire cette balise (2 à 4 phrases, ton du cabinet, sans
-emoji). Zapier ne publie que les articles apparus après l'activation : les 4 articles existants ne
-seront pas repostés automatiquement. Ne jamais changer l'URL d'un article publié : c'est
-l'identifiant de l'item, un changement provoquerait un second post.
+**How to apply** : à chaque paire d'articles, rédiger deux posts (accroche dans les deux
+premières lignes, 120 à 250 mots, ton du cabinet, faits strictement tirés de l'article, sans
+emoji, 3 hashtags au plus, lien de l'article en fin de post) et fournir les deux liens préremplis.
+Le flux `articles/feed.xml` et les images `og/<slug>.png` restent : l'image d'aperçu sert à la
+carte LinkedIn. Après chaque nouvel article, lancer `node tools/publier-articles.mjs`.
+Ne jamais changer l'URL d'un article déjà partagé.
 
 ### 2026-10-31 — `font-sans` de Tailwind n'est pas DM Sans
 
@@ -387,3 +388,6 @@ tour 1 de design. **How to apply** : pour forcer DM Sans sur un titre, utiliser
   connexion Zapier au compte LinkedIn de Me Hamoumou. Effet attendu : un post par nouvel article,
   sans intervention. Invalidé si un article publié n'a pas son post sous 24 h (vérifier l'historique
   du Zap).
+- 2026-11-01 : `SEO-JOURNAL.md` était servi publiquement (HTTP 200 sur le site). Bloqué par
+  `RedirectMatch 404 \.md$` dans `.htaccess`. Rien n'indique qu'il ait été indexé (aucun lien,
+  absent du sitemap), à vérifier par `site:pierrehamoumou-avocat.fr SEO-JOURNAL` au prochain point.

@@ -21,6 +21,8 @@ Redirect 301 /droit-de-la-securite-sociale.html /droit-securite-sociale-avocat-u
 RedirectMatch 404 ^/tools/
 RedirectMatch 404 ^/\.git
 RedirectMatch 404 ^/\.claude
+# Notes internes (SEO-JOURNAL.md...) : jamais servies. Elles etaient lisibles jusqu'au 01/11/2026.
+RedirectMatch 404 \.md$
 
 # Pages HTML : le navigateur revalide a chaque visite (reponse 304 si rien n'a
 # change). Sans consigne, il gardait une page plusieurs heures et ignorait les
