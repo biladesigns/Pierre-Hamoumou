@@ -405,3 +405,9 @@ modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-c
 - 2026-11-01 : `SEO-JOURNAL.md` était servi publiquement (HTTP 200 sur le site). Bloqué par
   `RedirectMatch 404 \.md$` dans `.htaccess`. Rien n'indique qu'il ait été indexé (aucun lien,
   absent du sitemap), à vérifier par `site:pierrehamoumou-avocat.fr SEO-JOURNAL` au prochain point.
+- 2026-11-02 : relecture de sécurité de `contact.php`. Défaut trouvé et corrigé : la limite
+  d'envois lisait le premier élément de X-Forwarded-For, fourni par le visiteur (une sonde a
+  montré qu'un en-tête falsifié y passait en tête). Elle lit désormais REMOTE_ADDR, réécrit par
+  Hostinger avec la vraie adresse, et limite les adresses IPv6 par bloc /64. Politique de
+  confidentialité mise à jour : Formspree, Tailwind CDN et Iconify n'y figurent plus ; Hostinger
+  et Gmail sont nommés, l'usage de l'IP contre les abus est déclaré.

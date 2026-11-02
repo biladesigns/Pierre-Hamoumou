@@ -35,8 +35,14 @@ if (!empty($_POST['website'])) {
 }
 
 // Limite par adresse IP : MAX_PAR_HEURE envois par heure.
-$ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? ($_SERVER['REMOTE_ADDR'] ?? 'inconnue');
-$ip = trim(explode(',', $ip)[0]);
+// REMOTE_ADDR est reecrit par Hostinger avec la vraie adresse du visiteur. Ne jamais lire
+// X-Forwarded-For : son premier element est fourni par le visiteur et falsifiable
+// (verifie le 02/11/2026), ce qui permettait de contourner la limite.
+$ip = $_SERVER['REMOTE_ADDR'] ?? 'inconnue';
+// En IPv6, un abonne dispose d'un bloc /64 entier : on limite par bloc, pas par adresse.
+if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+    $ip = substr(bin2hex(inet_pton($ip)), 0, 16) . '/64';
+}
 $journal = sys_get_temp_dir() . '/contact-' . hash('sha256', $ip . DOMAINE);
 $recents = [];
 if (is_file($journal)) {
