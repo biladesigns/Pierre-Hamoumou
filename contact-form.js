@@ -1,4 +1,5 @@
-var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mwvjbgep';
+// Envoi par contact.php, heberge sur le site (Formspree abandonne le 02/11/2026).
+var CONTACT_ENDPOINT = '/contact.php';
 
 async function submitContactForm(e) {
     e.preventDefault();
@@ -15,14 +16,12 @@ async function submitContactForm(e) {
     var data = new FormData(form);
 
     try {
-        var res = await fetch(FORMSPREE_ENDPOINT, {
+        var res = await fetch(CONTACT_ENDPOINT, {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
             body: data
         });
-        // Formspree signale le succes par le statut HTTP et un champ "next" dans la
-        // reponse, pas par un champ "ok". Tester json.ok affichait une erreur au
-        // visiteur alors que son message etait bien parti.
+        // Le succes se lit sur le statut HTTP, pas sur le contenu de la reponse.
         var json = {};
         try { json = await res.json(); } catch (e) {}
 
@@ -34,6 +33,8 @@ async function submitContactForm(e) {
             var champEmail = json.errors && json.errors.some(function(e){ return e.field === 'email'; });
             var msg = champEmail
                 ? 'L\'adresse email semble incorrecte. Merci de la vérifier.'
+                : res.status === 429
+                ? 'Vous avez déjà envoyé plusieurs messages. Merci de réessayer dans une heure, ou d\'appeler le cabinet au 07 70 28 25 46.'
                 : 'Le message n\'a pas pu être envoyé. Veuillez réessayer ou appeler le cabinet au 07 70 28 25 46.';
             feedback.className = 'form-feedback mt-4 p-4 rounded-sm text-sm text-center bg-red-50 text-red-700 border border-red-200';
             feedback.textContent = msg;

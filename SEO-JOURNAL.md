@@ -294,6 +294,20 @@ de chaque page). 33 occurrences affichaient du texte en police de secours, dont 
 tour 1 de design. **How to apply** : pour forcer DM Sans sur un titre, utiliser
 `font-['DM_Sans',sans-serif]`, jamais `font-sans`.
 
+### 2026-11-02 — Formspree remplacé par `contact.php`, hébergé sur le site
+
+Mathieu ne voulait plus de Formspree (réception jugée peu fiable, plan gratuit limité à 50
+messages par mois). Le formulaire passe par `contact.php`, exécuté par l'hébergement Hostinger,
+qui envoie le message depuis `formulaire@pierrehamoumou-avocat.fr` (domaine couvert par le SPF
+Hostinger) vers la boîte Gmail du cabinet, avec le visiteur en adresse de réponse. Protections :
+champ piège `website`, 5 envois par heure et par IP, refus des origines extérieures, nettoyage
+des en-têtes. Test réel du 02/11/2026 : reçu en boîte de réception Gmail (onglet « Mises à
+jour »), pas en spam.
+
+**How to apply** : ne pas revenir à un service tiers sans raison. Si les messages se mettent à
+manquer, tester d'abord `contact.php` (GET doit répondre 405) puis le dossier spam. Toute
+modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-check.py`).
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,

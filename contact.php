@@ -3,7 +3,7 @@
 // Remplace Formspree : envoi par le serveur Hostinger du site (domaine couvert par
 // le SPF _spf.mail.hostinger.com). Repond en JSON, lu par contact-form.js.
 
-const DESTINATAIRE = 'matbila63@gmail.com'; // TEMPORAIRE : test d'envoi du 02/11/2026
+const DESTINATAIRE = 'pierre.hamoumou.avocat@gmail.com';
 const EXPEDITEUR   = 'formulaire@pierrehamoumou-avocat.fr';
 const DOMAINE      = 'pierrehamoumou-avocat.fr';
 const MAX_PAR_HEURE = 5;
