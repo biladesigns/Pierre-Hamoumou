@@ -411,3 +411,6 @@ modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-c
   Hostinger avec la vraie adresse, et limite les adresses IPv6 par bloc /64. Politique de
   confidentialité mise à jour : Formspree, Tailwind CDN et Iconify n'y figurent plus ; Hostinger
   et Gmail sont nommés, l'usage de l'IP contre les abus est déclaré.
+- 2026-11-02 : copie cachée temporaire dans `contact.php` (bloc `COPIE_TEST`) vers Mathieu, pour
+  ses tests uniquement : seuls les messages envoyés avec son adresse lui sont copiés. Expire seule
+  le 04/11/2026 à 0 h (Paris). Retirer le bloc au prochain passage sur le repo.

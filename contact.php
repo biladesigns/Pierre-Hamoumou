@@ -8,6 +8,12 @@ const EXPEDITEUR   = 'formulaire@pierrehamoumou-avocat.fr';
 const DOMAINE      = 'pierrehamoumou-avocat.fr';
 const MAX_PAR_HEURE = 5;
 
+// Copie cachee temporaire pour les tests de Mathieu Bila (prestataire du site) : seuls les
+// messages envoyes avec son adresse lui sont copies, jamais ceux des visiteurs. Expire seule
+// a la fin du 03/11/2026 (heure de Paris). Bloc a retirer ensuite.
+const COPIE_TEST = 'matbila63@gmail.com';
+const COPIE_TEST_JUSQUA = '2026-11-04 00:00:00';
+
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex');
@@ -87,6 +93,11 @@ $entetes = [
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
 ];
+
+$paris = new DateTimeZone('Europe/Paris');
+if (strcasecmp($email, COPIE_TEST) === 0 && new DateTime('now', $paris) < new DateTime(COPIE_TEST_JUSQUA, $paris)) {
+    $entetes[] = 'Bcc: ' . COPIE_TEST;
+}
 
 $envoye = mail(DESTINATAIRE, mb_encode_mimeheader($objet, 'UTF-8'), $corps, implode("\r\n", $entetes), '-f' . EXPEDITEUR);
 if (!$envoye) {
