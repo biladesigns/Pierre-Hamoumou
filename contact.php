@@ -72,6 +72,7 @@ if ($nom === '')     $erreurs[] = ['field' => 'nom'];
 if ($sujet === '')   $erreurs[] = ['field' => 'sujet'];
 if ($message === '') $erreurs[] = ['field' => 'message'];
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $erreurs[] = ['field' => 'email'];
+if (($_POST['consentement'] ?? '') !== 'oui') $erreurs[] = ['field' => 'consentement'];
 if ($erreurs) {
     repondre(422, ['error' => 'Champs invalides', 'errors' => $erreurs]);
 }
@@ -82,7 +83,8 @@ $corps = "Nouveau message recu depuis le site pierrehamoumou-avocat.fr\n\n"
        . "Nom : $nom\n"
        . "Email : $email\n"
        . "Profil : " . ($profil ?: 'non precise') . "\n"
-       . "Sujet : $sujet\n\n"
+       . "Sujet : $sujet\n"
+       . "Consentement au traitement des données : oui\n\n"
        . "Message :\n$message\n\n"
        . "Pour repondre, utilisez simplement le bouton Repondre : la reponse partira vers $email.\n";
 

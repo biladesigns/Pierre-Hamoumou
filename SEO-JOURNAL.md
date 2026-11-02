@@ -414,3 +414,9 @@ modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-c
 - 2026-11-02 : copie cachée temporaire dans `contact.php` (bloc `COPIE_TEST`) vers Mathieu, pour
   ses tests uniquement : seuls les messages envoyés avec son adresse lui sont copiés. Expire seule
   le 04/11/2026 à 0 h (Paris). Retirer le bloc au prochain passage sur le repo.
+- 2026-11-03 : demandes de l'Ordre des avocats appliquées. Mention EI accolée au nom (mentions
+  légales et pied de page des 24 pages), directeur de publication avec adresse, téléphone et
+  courriel. Sous les 6 formulaires : case de consentement obligatoire (vérifiée aussi par
+  `contact.php`, champ `consentement`) et notice RGPD courte renvoyant à la politique de
+  confidentialité, dont la base légale cite désormais le consentement (6.1.a) et les mesures
+  précontractuelles (6.1.b).

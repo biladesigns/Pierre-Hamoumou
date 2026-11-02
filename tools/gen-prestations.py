@@ -17,7 +17,7 @@ import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
 FONTS_VERSION = "a6399abf"
-CSS_VERSION = "67ace7d8"
+CSS_VERSION = "e9332827"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -1067,7 +1067,8 @@ FOOTER = """    <footer class="bg-[#1a4541] text-stone-400 py-12 border-t border
           <div class="col-span-1 md:col-span-2">
             <img loading="lazy" decoding="async" width="250" height="250" src="/logo-footer.png" alt="Pierre Hamoumou Avocat" class="h-20 w-auto mb-4">
             <p class="max-w-xs leading-relaxed text-stone-400 font-light">
-              Avocat au Barreau de Lyon.<br>
+              Maître Pierre HAMOUMOU EI<br>
+              Avocat au Barreau de Lyon<br>
               90 rue Servient, 69003 Lyon<br>
               Une expertise dédiée à la postulation et au droit de la sécurité sociale.
             </p>

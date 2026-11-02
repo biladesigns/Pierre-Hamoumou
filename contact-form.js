@@ -31,7 +31,10 @@ async function submitContactForm(e) {
             form.reset();
         } else {
             var champEmail = json.errors && json.errors.some(function(e){ return e.field === 'email'; });
-            var msg = champEmail
+            var champConsentement = json.errors && json.errors.some(function(e){ return e.field === 'consentement'; });
+            var msg = champConsentement
+                ? 'Merci de cocher la case de consentement pour que le cabinet puisse traiter votre demande.'
+                : champEmail
                 ? 'L\'adresse email semble incorrecte. Merci de la vérifier.'
                 : res.status === 429
                 ? 'Vous avez déjà envoyé plusieurs messages. Merci de réessayer dans une heure, ou d\'appeler le cabinet au 07 70 28 25 46.'
