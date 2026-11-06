@@ -17,7 +17,7 @@ import sys
 
 BASE = "https://pierrehamoumou-avocat.fr"
 FONTS_VERSION = "a6399abf"
-CSS_VERSION = "e9332827"
+CSS_VERSION = "87c49a90"
 HUB = "/droit-securite-sociale-avocat-urssaf.html"
 HUB_LABEL = "Droit de la securite sociale"
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
@@ -121,6 +121,11 @@ opinion.""",
   pas constat d'une documentation inexploitable.
 </p>
 
+<p>
+  Encore faut-il savoir si l'entreprise est sous le seuil. La Cour de cassation a fixé la méthode le
+  15 octobre 2026 pour l'ancien seuil de dix salariés : <a href="/articles/duree-controle-urssaf-trois-mois-calcul-effectif-salaries.html" class="text-[#2C6E68] underline decoration-[#AED18E] underline-offset-4">l'effectif s'apprécie sur la moyenne des douze mois, au 31 décembre de l'année précédant l'envoi de l'avis</a>.
+</p>
+
 <h2>Préparer la visite</h2>
 
 <p>
@@ -170,6 +175,7 @@ utile de toute la procédure. Le Cabinet vérifie la régularité de l'avis, ide
 exposés et prépare avec vous les pièces à produire.""",
     "liens": [
         ("/articles/charte-du-cotisant-controle-avis-de-controle-urssaf.html", "Charte du cotisant contrôlé : deux décisions du 24 septembre 2026, deux issues"),
+        ("/articles/duree-controle-urssaf-trois-mois-calcul-effectif-salaries.html", "Durée du contrôle URSSAF : comment calculer le seuil de salariés"),
         ("/avocat-lettre-observations-urssaf.html", "Étape suivante : répondre à la lettre d'observations"),
     ],
 },
@@ -297,6 +303,7 @@ demander à temps. Le Cabinet analyse chaque chef de redressement, vérifie la r
 procédure et rédige la réponse motivée avec les pièces utiles.""",
     "liens": [
         ("/articles/controle-urssaf-traitements-automatises.html", "Redressement par traitement automatisé : soixante-trois chefs annulés"),
+        ("/articles/solidarite-financiere-donneur-ordre-urssaf-redressement-sous-traitant.html", "Solidarité financière : invoquer la lettre d'observations du sous-traitant"),
         ("/avocat-mise-en-demeure-urssaf.html", "Étape suivante : contester la mise en demeure"),
     ],
 },
@@ -587,7 +594,7 @@ applicable.""",
   ses obligations de vigilance, c'est-à-dire la vérification périodique de la régularité de ses
   sous-traitants. S'y ajoutent les indemnités de petit déplacement, de trajet et de transport,
   propres aux conventions du bâtiment, et le traitement des intempéries. L'enjeu est double :
-  contester le redressement et démontrer que les diligences ont été accomplies.
+  contester le redressement et démontrer que les diligences ont été accomplies. Le donneur d'ordre peut aussi <a href="/articles/solidarite-financiere-donneur-ordre-urssaf-redressement-sous-traitant.html" class="text-[#2C6E68] underline decoration-[#AED18E] underline-offset-4">invoquer les irrégularités du redressement de son sous-traitant</a>.
 </p>
 
 <h2>Propreté</h2>
@@ -654,6 +661,7 @@ la convention collective applicable à votre activité.""",
     "liens": [
         ("/avocat-avis-de-controle-urssaf.html", "Se préparer dès la réception de l'avis de contrôle"),
         ("/articles/controle-urssaf-multi-etablissements-taux-unique.html", "Entreprise à plusieurs établissements : le taux unique est illicite"),
+        ("/articles/solidarite-financiere-donneur-ordre-urssaf-redressement-sous-traitant.html", "Solidarité financière : les recours du donneur d'ordre"),
     ],
 },
 

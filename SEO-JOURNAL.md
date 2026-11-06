@@ -308,6 +308,19 @@ jour »), pas en spam.
 manquer, tester d'abord `contact.php` (GET doit répondre 405) puis le dossier spam. Toute
 modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-check.py`).
 
+### 2026-11-06 — Lire l'arrêt et le texte en vigueur avant d'écrire, même après la veille
+
+Articles de novembre (24-14.941 et 24-13.124). La fiche de veille les disait vérifiés, mais la
+relecture a trouvé deux points absents ou faux : « les cours d'appel divergeaient » ne figure pas
+dans l'arrêt (non repris), et l'article R. 133-8 qui fonde le second arrêt a été réécrit au
+1er janvier 2020 et ne contient plus l'exigence de signature du directeur. L'arrêt 23-17.622 du
+25/09/2025 dit par ailleurs l'inverse pour la lettre adressée au donneur d'ordre lui-même.
+
+**How to apply** : pour un arrêt rendu sur un texte « dans sa rédaction applicable au litige »,
+ouvrir la version en vigueur du texte (Légifrance s'ouvre dans le navigateur intégré, pas en
+requête directe) et dire au lecteur ce qui vaut pour un dossier récent. Chercher aussi les arrêts
+publiés de sens voisin sur le même sujet. La veille est une sélection de sujets, pas une source.
+
 ## Partie B — Journal daté
 
 - 2026-09-08 : ajout de 3 redirections 301 dans `.htaccess` (droit-de-la-securite-sociale,
@@ -430,3 +443,9 @@ modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-c
 - 2026-11-06 : Formspree a livré le 3/11 des tests du 29/10, soit 5 jours de retard. Vérifier dans
   son tableau de bord qu'aucun message de prospect n'y est resté. Copie de test retirée de
   `contact.php`.
+- 2026-11-06 : articles de novembre publiés (durée du contrôle et effectif ; solidarité financière),
+  avec images d'aperçu, flux, sitemap (24 URL) et liens depuis les pages avis de contrôle, lettre
+  d'observations et secteurs. Requêtes visées : « durée contrôle urssaf », « solidarité financière
+  urssaf donneur d'ordre ». Mesure le 2026-12-06 : les deux articles doivent générer des impressions
+  sur ces requêtes (position moyenne sous 20). Invalidé s'ils ne sortent que sur les numéros de
+  pourvoi : retravailler alors les titres.

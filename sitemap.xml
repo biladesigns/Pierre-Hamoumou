@@ -68,8 +68,20 @@
   </url>
   <url>
     <loc>https://pierrehamoumou-avocat.fr/articles/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pierrehamoumou-avocat.fr/articles/duree-controle-urssaf-trois-mois-calcul-effectif-salaries.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pierrehamoumou-avocat.fr/articles/solidarite-financiere-donneur-ordre-urssaf-redressement-sous-traitant.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
