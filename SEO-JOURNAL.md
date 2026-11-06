@@ -420,3 +420,13 @@ modification de `contact-form.js` impose de changer `?v=` (contrôlé par `seo-c
   `contact.php`, champ `consentement`) et notice RGPD courte renvoyant à la politique de
   confidentialité, dont la base légale cite désormais le consentement (6.1.a) et les mesures
   précontractuelles (6.1.b).
+- 2026-11-06 : point GSC (7/10 au 3/11 contre les 28 jours précédents) : 64 clics contre 32, environ
+  1 200 impressions contre 573, position moyenne 15 contre 11,7 (les nouvelles pages démarrent loin).
+  Les 8 pages de prestation ont toutes des impressions (objectif du 29/11 : 4). 60 requêtes sur la
+  période (objectif du 29/11 : plus de 70). « avocat urssaf lyon » : 11 clics, 147 impressions,
+  position moyenne 18,1. À surveiller : l'ancienne URL du hub garde 329 impressions en position
+  18,1, la nouvelle en a 31 en position 46,6, 5 jours seulement après le renommage. Si la nouvelle
+  n'a pas repris la position de l'ancienne d'ici le 29/11, inspecter le hub et la redirection.
+- 2026-11-06 : Formspree a livré le 3/11 des tests du 29/10, soit 5 jours de retard. Vérifier dans
+  son tableau de bord qu'aucun message de prospect n'y est resté. Copie de test retirée de
+  `contact.php`.
